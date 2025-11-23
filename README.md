@@ -1,22 +1,29 @@
 # Project Spine Viewer
 
 A lightweight, fast-to-build orchestration layer that adds structure, clarity, and predictability to a flat work-request system.  
-This tool introduces hierarchical task mapping, dependency flow visualization, team load insights, and forward-looking planning — 
+This tool introduces hierarchical task mapping, dependency flow visualization, team load insights, and forward-looking planning —  
 all without requiring changes from project leads or upstream data sources.
+
+---
 
 ## Purpose
 
-The goal of this project is to provide a clear **Project → Work Package → Work Request → Task → Subtask** structure, improve execution speed,
-reduce cognitive load, and create a future-ready planning layer that can eventually integrate with Insight.
+The goal of this project is to provide a clear **Project → Task → Work Request → Objective** hierarchical structure,  
+improve execution speed, reduce cognitive load, and create a future-ready planning layer that can eventually integrate with Insight.
+
+---
 
 ## Core Features (MVF)
 
 - Shadow Pipeline (predict incoming work)
 - Team Load / Fragmentation Map
-- Work Package Dependency Cards
-- Task Flow Graph with expandable subtasks
-- Weekly planning view
+- Unified **Node-based graph model** (hierarchy + dependencies)
+- Task Flow Graph with expandable subtasks (React Flow)
+- Weekly planning view (Objectives layer)
 - Integration with existing Work Request tracker
+- Future pathway to Django backend (Insight integration)
+
+---
 
 ## Repository Structure
 
@@ -25,20 +32,34 @@ README.md
 /docs
     objectives.md
     specification.md
+    architecture.md
 /src
-    (future implementation files)
+    (React frontend will live here)
 ```
+
+---
 
 ## Documentation
 
-- Detailed specification: [`/docs/specification.md`](docs/specification.md)
-- Project objectives: [`/docs/objectives.md`](docs/objectives.md)
+- **Detailed Specification:**  
+  [`/docs/specification.md`](docs/specification.md)
+
+- **Project Objectives:**  
+  [`/docs/objectives.md`](docs/objectives.md)
+
+- **Architecture Overview:**  
+  [`/docs/architecture.md`](docs/architecture.md)
+
+These documents define the system purpose, MVF scope, data models, and overall architecture.
+
+---
 
 ## Status
 
-Draft specification is complete. Implementation begins next.
+- Draft specification ✔  
+- Architecture definition ✔  
+- Node schema finalized ✔  
+- Frontend scaffolding started  
+- Implementation begins next  
 
-## Suggested Project Name
-
-**SpineFlow**  
-(“Spine” referring to the project spine hierarchy and “Flow” reflecting task/dependency flow visualization.)
+---

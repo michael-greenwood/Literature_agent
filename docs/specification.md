@@ -108,39 +108,40 @@ Each Work Request gets 3–7 weekly targets to maintain focus.
 
 # 5. Data Model
 
-Minimal JSON/YAML structure:
+We adopt a **unified Node model** (DAG + hierarchy) that supports infinite nesting:
 
 ```
-Project
-  id
-  name
-  shadowPipeline[]
-  workPackages[]
-
-WorkPackage
-  id
-  name
-  dependsOn[]
-
-WorkRequest
-  id
-  name
-  projectId
-  workPackageId
-  tasks[]
-
-Task
-  id
-  name
-  subtasks[]
-  next[]
-
-Person
-  id
-  name
-  activeRequests[]
-  activeTasks[]
+Node {
+  id: string,
+  type: project | task | wr | objective | milestone | pipeline,
+  name: string,
+  description: string,
+  parent: string | null,
+  children: [string],
+  dependencies: [string],
+  dependents: [string],      // optional, auto-generated
+  status: planned | active | in-progress | blocked | done | on-hold,
+  priority: low | medium | high | urgent,
+  estimateHours: number | null,
+  actualHours: number | null,
+  startDate: string | null,
+  dueDate: string | null,
+  completedDate: string | null,
+  owner: string | null,
+  champion: string | null,
+  assignee: string | null,
+  meta: {}
+}
 ```
+
+This model supports:
+- infinite hierarchy (Project → Task → WR → Objective → Subtasks → …)
+- cross-dependencies at any level
+- parallel branches
+- weekly planning
+- load visualization
+- pipeline modeling
+- future integration with Insight
 
 ---
 
@@ -149,54 +150,59 @@ Person
 ## View 1 — Projects Overview  
 Shows:
 - project name  
-- shadow pipeline preview  
-- dependency spine  
-- progress (optional)
+- pipeline nodes  
+- child tasks  
+- Work Requests and Objectives  
+- expandable structure  
+- dependency indicators  
 
 ## View 2 — Team Load Map  
 Shows:
 - fragmentation  
 - load  
 - active work  
+- per-person WR and Objective counts  
 
 ## View 3 — Task Flow Graph  
 Shows:
-- Work Request → Tasks → Subtasks  
-- Dependencies  
-- Expand/collapse nodes  
+- full DAG using react-flow  
+- dependencies  
+- expand/collapse groups  
 
-## View 4 (optional) — Weekly Goals Page
+## View 4 — Weekly Goals  
+Shows:
+- all active objectives
+- grouped by project or person  
+- checklist-style view  
 
 ---
 
 # 7. Complement to Existing Tracker
 
-- Work Requests come directly from your current Excel tracker
-- They become the third level in the hierarchy
-- No interruptions to current workflow
-- The tool adds structure, not bureaucracy
+The existing Excel Work Request tracker maps naturally into:
+- Node(type="wr")
+- with attributes PL, Champion, Status, Notes, WBS
+- and optional child Objectives
+
+This tool adds structure **below** WRs without altering how project leads submit work.
 
 ---
 
 # 8. Required Decisions Before Build
 
-1. Confirm hierarchy:
-   `Project → Work Package → Work Request → Task → Subtask`
-
-2. Subtasks in MVF?
-3. Include Work Packages in v1 or v2?
-4. Include Weekly Goals in v1?
-5. Should dependencies be manually defined?
+1. Confirm final Node schema ✔  
+2. Decide whether subtasks appear in MVF  
+3. Include Weekly Goals in v1?  
+4. Should dependencies be manually created in the UI?  
+5. Should Projects Overview use a sidebar layout or 3‑panel layout?  
 
 ---
 
 # 9. Next Steps
 
-- Finalize design decisions
-- Implement data loader for existing tracker
-- Build UI scaffolding
-- Implement Task Flow Graph
-- Implement Load Map
-- Extend incrementally
-
-This document will evolve as the design matures.
+- Build the Node-based JSON loader  
+- Implement Projects Overview UI  
+- Build Graph View (react-flow)  
+- Build Load Map  
+- Build Weekly Goals  
+- Add editing capabilities  

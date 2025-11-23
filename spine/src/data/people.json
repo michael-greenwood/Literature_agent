@@ -1,0 +1,11 @@
+{
+  "people": [
+    {
+      "id": "jeremy",
+      "name": "Jeremy Wilson",
+      "activeRequests": ["M48", "H"],
+      "activeTasks": [],
+      "projects": ["P-003491"]
+    }
+  ]
+}
