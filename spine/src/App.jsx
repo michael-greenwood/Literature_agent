@@ -5,6 +5,7 @@ import ProjectsOverview from "./views/ProjectsOverview";
 import TeamLoadMap from "./views/TeamLoadMap";
 import TaskFlowGraph from "./views/TaskFlowGraph";
 import WeeklyGoals from "./views/WeeklyGoals";
+//import ProjectDetailView from "./views/ProjectDetailView";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/load" element={<TeamLoadMap />} />
         <Route path="/flow" element={<TaskFlowGraph />} />
         <Route path="/goals" element={<WeeklyGoals />} />
+        {/*<Route path="/project/:id" element={<ProjectDetailView />} />*/}
       </Routes>
     </BrowserRouter>
   );
