@@ -1,0 +1,834 @@
+[
+  {
+    "id": "paper_001",
+    "title": "Function-Space Decoupled Diffusion for Forward and Inverse Modeling in Carbon Capture and Storage",
+    "abstract": "Accurate characterization of subsurface flow is critical for Carbon Capture and Storage (CCS) but remains challenged by the ill-posed nature of inverse problems with sparse observations. We present Fun-DDPS, a generative framework that combines function-space diffusion models with differentiable neural operator surrogates for both forward and inverse modeling. Our approach learns a prior distribution over geological parameters (geomodel) using a single-channel diffusion model, then leverages a Local Neural Operator (LNO) surrogate to provide physics-consistent guidance for cross-field conditioning on the dynamics field. This decoupling allows the diffusion prior to robustly recover missing information in parameter space, while the surrogate provides efficient gradient-based guidance for data assimilation. We demonstrate Fun-DDPS on synthetic CCS modeling datasets, achieving two key results: (1) For forward modeling with only 25% observations, Fun-DDPS achieves 7.7% relative error compared to 86.9% for standard surrogates (an 11x improvement), proving its capability to handle extreme data sparsity where deterministic methods fail. (2) We provide the first rigorous validation of diffusion-based inverse solvers against asymptotically exact Rejection Sampling (RS) posteriors. Both Fun-DDPS and the joint-state baseline (Fun-DPS) achieve Jensen-Shannon divergence less than 0.06 against the ground truth. Crucially, Fun-DDPS produces physically consistent realizations free from the high-frequency artifacts observed in joint-state baselines, achieving this with 4x improved sample efficiency compared to rejection sampling.",
+    "authors": [
+      "Xin Ju",
+      "Jiachen Yao",
+      "Anima Anandkumar",
+      "Sally M. Benson",
+      "Gege Wen"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.12274v1"
+  },
+  {
+    "id": "paper_002",
+    "title": "Rapid Dissipative Ground State Preparation at Chemical Transition States",
+    "abstract": "Simulating chemical reactions is a central challenge in computational chemistry, characterized by an uneven difficulty profile: while equilibrium reactant and product geometries are often classically tractable, intermediate transition states frequently exhibit strong correlation that defies standard approximations. We present a protocol for dissipative ground state preparation that exploits this structure by treating the reaction path itself as a computational primitive. Our protocol uses an approach where a state prepared at a tractable geometry is propagated along a discretized reaction coordinate using Procrustes-aligned orbital rotations and stabilized by engineered dissipative cooling. We show that for reaction paths satisfying a localized Eigenstate Thermalization Hypothesis (ETH) drift condition in the strongly correlated regime, the algorithm prepares ground states of chemical systems with $N_o$ orbitals to an energy error $ε_E$ with a total gate complexity scaling as $\\widetilde{O}(N_o^{3}/ε_E)$. We provide logical resource estimates for benchmark systems including FeMoco, Cytochrome P450, and Ru-based carbon capture catalysts.",
+    "authors": [
+      "Thomas W. Watts",
+      "Soumya Sarkar",
+      "Daniel Collins",
+      "Nam Nguyen",
+      "Luke Quezada",
+      "Michael J. Bremner",
+      "Samuel J. Elman"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.11603v1"
+  },
+  {
+    "id": "paper_003",
+    "title": "From carbon management strategies to implementation: Modeling and physical simulation of CO2 pipeline infrastructure -- a case study for Germany",
+    "abstract": "Carbon capture and storage or utilization (CCUS) will play an important role to achieve climate neutrality in many economies. Pipelines are widely regarded as the most efficient means of CO2 transport; however, they are currently non-existent. Policy-makers and companies need to develop large-scale infrastructure under substantial uncertainty. Methods and analyses are needed to support pipeline planning and strategy development. This paper presents an integrated method for designing CO2 pipeline networks by combining energy system scenarios with physical network simulation. Using Germany as a case study, we derive spatially highly resolved CO2 balances to develop a dense-phase CO2 pipeline topology that follows existing gas pipeline corridors. The analyzed system includes existing sites for cement and lime production, waste incineration, carbon users, four coastal CO2 hubs, and border crossing points. We then apply the multiphysical network simulator MYNTS to assess the technical feasibility of this network. We determine pipeline diameters, pump locations, and operating conditions that ensure stable dense-phase transport. The method explicitly accounts for elevation and possible impurities. The results indicate that a system of about 7000 km pipeline length and a mixed normed diameter of DN700 on main corridors and of DN500/DN400 on branches presents a feasible solution to connect most sites. Investment costs for the optimized pipeline system are calculated to be about 17 billion Euros. The method provides a reproducible framework and is transferable to other countries and to European scope.",
+    "authors": [
+      "Mehrnaz Anvari",
+      "Marius Neuwirth",
+      "Okan Akca",
+      "Luna Lütz",
+      "Simon Lukas Bussmann",
+      "Tobias Fleiter",
+      "Bernhard Klaassen"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2601.15090v2"
+  },
+  {
+    "id": "paper_004",
+    "title": "Enhancing Spatial Reasoning in Large Language Models for Metal-Organic Frameworks Structure Prediction",
+    "abstract": "Metal-organic frameworks (MOFs) are porous crystalline materials with broad applications such as carbon capture and drug delivery, yet accurately predicting their 3D structures remains a significant challenge. While Large Language Models (LLMs) have shown promise in generating crystals, their application to MOFs is hindered by MOFs' high atomic complexity. Inspired by the success of block-wise paradigms in deep generative models, we pioneer the use of LLMs in this domain by introducing MOF-LLM, the first LLM framework specifically adapted for block-level MOF structure prediction. To effectively harness LLMs for this modular assembly task, our training paradigm integrates spatial-aware continual pre-training (CPT), structural supervised fine-tuning (SFT), and matching-driven reinforcement learning (RL). By incorporating explicit spatial priors and optimizing structural stability via Soft Adaptive Policy Optimization (SAPO), our approach substantially enhances the spatial reasoning capability of a Qwen-3 8B model for accurate MOF structure prediction. Comprehensive experiments demonstrate that MOF-LLM outperforms state-of-the-art denoising-based and LLM-based methods while exhibiting superior sampling efficiency.",
+    "authors": [
+      "Mianzhi Pan",
+      "JianFei Li",
+      "Peishuo Liu",
+      "Botian Wang",
+      "Yawen Ouyang",
+      "Yiming Rong",
+      "Hao Zhou",
+      "Jianbing Zhang"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2601.09285v1"
+  },
+  {
+    "id": "paper_005",
+    "title": "AI-Guided Discovery of Novel Ionic Liquid Solvents for Industrial CO2 Capture",
+    "abstract": "We present an AI-driven approach to discover compounds with optimal properties for CO2 capture from flue gas-refinery emissions' primary source. Focusing on ionic liquids (ILs) as alternatives to traditional amine-based solvents, we successfully identify new IL candidates with high working capacity, manageable viscosity, favorable regeneration energy, and viable synthetic routes. Our approach follows a five-stage pipeline. First, we generate IL candidates by pairing available cation and anion molecules, then predict temperature- and pressure-dependent CO2 solubility and viscosity using a GNN-based molecular property prediction model. Next, we convert solubility to working capacity and regeneration energy via Van't Hoff modeling, and then find the best set of candidates using Pareto optimization, before finally filtering those based on feasible synthesis routes. We identify 36 feasible candidates that could enable 5-10% OPEX savings and up to 10% CAPEX reductions through lower regeneration energy requirements and reduced corrosivity-offering a novel carbon-capture strategy for refineries moving forward.",
+    "authors": [
+      "Davide Garbelotto",
+      "Alexander Lobo",
+      "Urvi Awasthi",
+      "Oleg Medvedev",
+      "Srayanta Mukherjee",
+      "Anton Aristov",
+      "Konstantin Polunin",
+      "Alex De Mur",
+      "Leonid Zhukov",
+      "Azad Huseynov",
+      "Murad Abdullayev"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2601.03284v1"
+  },
+  {
+    "id": "paper_006",
+    "title": "Learning-based data-enabled economic predictive control with convex optimization for nonlinear systems",
+    "abstract": "In this article, we propose a data-enabled economic predictive control method for a class of nonlinear systems, which aims to optimize the economic operational performance while handling hard constraints on the system outputs. Two lifting functions are constructed via training neural networks, which generate mapped input and mapped output in a higher-dimensional space, where the nonlinear economic cost function can be approximated using a quadratic function of the mapped variables. The data-enabled predictive control framework is extended to address nonlinear dynamics by using the mapped input and the mapped output that belong to a virtual linear representation, which serves as an approximation of the original nonlinear system. Additionally, we reconstruct the system output variables from the mapped output, on which hard output constraints are imposed. The online control problem is formulated as a convex optimization problem, despite the nonlinearity of the system dynamics and the original economic cost function. Theoretical analysis is presented to justify the suitability of the proposed method for nonlinear systems. We evaluate the proposed method through two large-scale industrial case studies: (i) a biological water treatment process, and (ii) a solvent-based shipboard post-combustion carbon capture process. These studies demonstrate its effectiveness and advantages.",
+    "authors": [
+      "Mingxue Yan",
+      "Xuewen Zhang",
+      "Kaixiang Zhang",
+      "Zhaojian Li",
+      "Xunyuan Yin"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2512.23170v1"
+  },
+  {
+    "id": "paper_007",
+    "title": "Carbon Capture from wet vapors",
+    "abstract": "We present molecular dynamics simulations of the adsorption of mixed CO2-water vapors on a graphene flakes substrate, a model inspired by the microporous structure of activated carbons. Adsorption strength is quantified through a reduced energy measure that avoids ambiguities associated with defining adsorption regions. We find that CO2 adsorbs more strongly and more rapidly than water across all temperatures studied. Adsorption from wet vapors was observed to result in higher CO2 uptake compared with dry vapors at temperatures below 375 K. At intermediate temperatures, water molecules were seen to form clusters that interact with both the substrate and CO2, potentially promoting CO2 adsorption. Additionally, we observe that the GF substrate inhibits the formation of large water clusters, altering water aggregation dynamics near the surface. These findings highlight a cooperative adsorption mechanism in humid environments and suggest that graphene-flakes-based materials may perform effectively for carbon capture under realistic, moisture-containing conditions.",
+    "authors": [
+      "Silvina Gatica"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2512.13918v1"
+  },
+  {
+    "id": "paper_008",
+    "title": "Decarbonization pathways for liquid fuels: A multi-sector energy system perspective",
+    "abstract": "Low-carbon liquid fuels play a key role in energy system decarbonization scenarios. This study uses a multi-sector capacity expansion model of the contiguous United States to examine fuels production in deeply decarbonized energy systems. Our analysis evaluates how the shares of biofuels, synthetic fuels, and fossil liquid fuels change under varying assumptions about resource constraints (biomass and CO2 sequestration availability), fuel demand distributions, and supply flexibility to produce different fuel products. Across all scenarios examined, biofuels provide a substantial share of liquid fuel supply, while synthetic fuels deploy only when biomass or CO2 sequestration is assumed to be more limited. Fossil liquid fuels remain in all scenarios examined, primarily driven by the extent to which their emissions can be offset with removals. Limiting biomass increases biogenic CO2 capture within biofuel pathways, while limiting sequestration availability increases the share of captured atmospheric (including biogenic) carbon directed toward utilization for synthetic fuel production. While varying assumptions about liquid fuel demand distributions and fuel product supply flexibility alter competition among individual fuel production technologies, broader energy system outcomes are robust to these assumptions. Biomass and CO2 sequestration availability are key drivers of energy system outcomes in deeply decarbonized energy systems.",
+    "authors": [
+      "Jun Wen Law",
+      "Bryan K. Mignone",
+      "Dharik S. Mallapragada"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2511.19159v1"
+  },
+  {
+    "id": "paper_009",
+    "title": "System Effects of Carbon-Free Electricity Procurement: Regional Technology and Emissions Impacts of Voluntary Markets",
+    "abstract": "Voluntary carbon-free electricity (CFE) procurement has the potential to accelerate electric sector decarbonization, but procurement strategies vary widely, leading to uncertainty about emissions, investments, and costs. This study assesses the system-wide effects of voluntary CFE procurement on U.S. regional power systems using a detailed energy systems model across a range of program designs, eligible technologies, policy environments, and modeling assumptions. Results suggest that hourly matching, where clean electricity procurement aligns with hourly load, combined with new and local generation could maximize emissions reductions from CFE procurement, particularly under existing Inflation Reduction Act incentives and state policies. However, regional costs vary significantly, with a CFE cost premium ranging from \\$11-63/MWh nationally across scenarios and \\$1-130/MWh across regions, broader than previous estimates. Expanding the eligible technology portfolio to include renewables, nuclear, carbon capture, and energy storage reduces costs, particularly in regions with lower wind and solar resource quality, though variable renewables and battery storage remain the dominant resources in many scenarios. Additionally, we show that the future policy environment strongly influences the effectiveness of voluntary CFE programs, with more stringent emissions policies or subsidies potentially limiting the incremental benefits of procurement. The analysis also quantifies how features of the model framework can shape insights about CFE procurement strategies.",
+    "authors": [
+      "John Bistline",
+      "Geoffrey Blanford",
+      "Adam Diamant",
+      "Arin Kaye",
+      "Daniel Livengood",
+      "Qianru Zhu",
+      "Francisco Ralston Fonseca"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2511.03049v1"
+  },
+  {
+    "id": "paper_010",
+    "title": "Environmental Impact of CI/CD Pipelines",
+    "abstract": "CI/CD pipelines are widely used in software development, yet their environmental impact, particularly carbon and water footprints (CWF), remains largely unknown to developers, as CI service providers typically do not disclose such information. With the growing environmental impact of cloud computing, understanding the CWF of CI/CD services has become increasingly important. This work investigates the CWF of using GitHub Actions, focusing on open-source repositories where usage is free and unlimited for standard runners. We build upon a methodology from the Cloud Carbon Footprint framework and we use the largest dataset of workflow runs reported in the literature to date, comprising over 2.2 million workflow runs from more than 18,000 repositories. Our analysis reveals that the GitHub Actions ecosystem results in a substantial CWF. Our estimates for the carbon footprint in 2024 range from 150.5 MTCO2e in the most optimistic scenario to 994.9 MTCO2e in the most pessimistic scenario, while the water footprint ranges from 1,989.6 to 37,664.5 kiloliters. The most likely scenario estimates are 456.9 MTCO2e for carbon footprint and 5,738.2 kiloliters for water footprint. To provide perspective, the carbon footprint in the most likely scenario is equivalent to the carbon captured by 7,615 urban trees in a year, and the water footprint is comparable to the water consumed by an average American family over 5,053 years. We explore strategies to mitigate this impact, primarily by reducing wasted computational resources. Key recommendations include deploying runners in regions whose energy production has a low environmental impact such as France and the United Kingdom, implementing stricter deactivation policies for scheduled runs and aligning their execution with periods when the regional energy mix is more environmentally favorable, and reducing the size of repositories.",
+    "authors": [
+      "Nuno Saavedra",
+      "Alexandra Mendes",
+      "João F. Ferreira"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2510.26413v2"
+  },
+  {
+    "id": "paper_011",
+    "title": "Tritium Separation from Gaseous 1,2,3H Isotopologue Mixtures by Selective Adsorption on Ag-Exchanged Zeolite Type Y",
+    "abstract": "Efficient separation of hydrogen isotopologues is crucial for applications such as the recycling of exhaust streams in nuclear fusion reactors. Using thermal desorption spectroscopy (TDS), we report, for the first time, on separation experiments of a ternary 1,2,3H isotope mixture, achieving tritium enrichment of 70% from an initially equimolar (1:1:1) gas mixture, based on selective adsorption using an Ag(I)-exchanged zeolite type Y. Further experiments on binary hydrogen isotope mixtures validated numerical predictions of the separation efficiency for T2. Specifically, the high selectivity for tritium over protium of 38.2 makes the Ag(I)-exchanged zeolite an excellent candidate for energy-efficient isotope separation at liquid-nitrogen temperature.",
+    "authors": [
+      "Alexandra Becker",
+      "Holger Lippold",
+      "Michael Hirscher",
+      "Cornelius Fischer"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2510.03333v1"
+  },
+  {
+    "id": "paper_012",
+    "title": "Advancing three dimensional modeling of adsorption physics in porous media for gas separation towards a new design of fixed bed adsorbers",
+    "abstract": "A new three-dimensional (3D) multiphase computational fluid dynamics (CFD) model for adsorption physics in porous media is developed and validated. The model is constituted at a macroscopic scale that integrates new volumetric source terms in the multi-species gas transport and energy conservation equations. These new terms, for the first time, take into account the impact of pores adsorption occupation rate (PAOR), or gas loading. Transient 3D simulations are performed at an atmospheric pressure of about 1.02 bar for different CO2-He gas mixture feed-in compositions (100%, 50%, and 15% CO2). The 3D model validation is conducted through quantitative comparisons with experimental data from the literature for CO2 adsorption on porous Zeolite-13X beads in a cylindrical fixed-bed. Results demonstrate the new model's ability to accurately predict the breakthrough curves and the thermal front propagation inside the bed. Finally, the new CFD model is applied to investigate CO2 capture in a new 3D design of fixed-bed adsorbers of equivalent adsorbent material volume. The new design outperformed the reference cylindrical design thanks to its new geometry with higher surface area. This allows to shorten the adsorption periods in pressure and temperature swing adsorption processes and thus increase the overall gas separation process productivity.",
+    "authors": [
+      "Mohamad Najib Nadamani",
+      "Mostafa Safdari Shadloo",
+      "Talib Dbouk"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2509.25062v1"
+  },
+  {
+    "id": "paper_013",
+    "title": "Competitive Adsorption of Toluene and Water in MFI-type Zeolites",
+    "abstract": "Competitive adsorption is a major challenge in understanding catalytic activity, selectivity and reaction mechanisms in confined environments such as zeolites. This study investigated competitive adsorption in MFI-type zeolites (ZSM-5) using solid-state NMR, focusing on the interplay between toluene and water. Quantitative 1H NMR spectroscopy identified three distinct populations of adsorbed toluene evolving with increasing toluene loading. The adsorption behavior was consistent across a series of samples with Si/Al ratio ranging from 11.5 to 140. Combining 1D and 2D NMR techniques with sample engineering (e.g. pore-blocking) enabled the assignment of the populations to toluene within the zeolite channels, at the pore mouths, and adsorbed on the external crystal surface. Crucially, introducing water to toluene-loaded zeolites caused a partial displacement of toluene from the internal channels, but significant removal from the pore mouths. This dis-placement occurred even in the highly hydrophobic zeolite (Si/Al = 140), where water still preferentially adsorbed to Brønsted acid sites and silanol species. The results highlight the critical impact that competitive adsorption from solvents, products, or impurities can have on the efficiency and selectivity of zeolite-mediated transformations.",
+    "authors": [
+      "Gavriel Arbiv",
+      "Sambhu Radhakrishnan",
+      "Alysson F. Morais",
+      "C. Vinod Chandran",
+      "Dries Vandenabeele",
+      "Dirk Dom",
+      "Karel Duerinckx",
+      "Christine E. A. Kirschhock",
+      "Eric Breynaert"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": "10.1016/j.micromeso.2025.113905",
+    "arxiv_id": "2509.10219v1"
+  },
+  {
+    "id": "paper_014",
+    "title": "Thermal transport and the impact of hydrogen adsorption in Linde Type A zeolitic imidazolate frameworks",
+    "abstract": "Thermal transport in metal-organic frameworks (MOFs) is of practical interest in diverse applications such as gas storage and separations, since insufficient heat dissipation can lead to detrimental effects. Despite investigations, influence of molecular infiltration on the heat transport remains unclear in many of MOFs due to poor understanding of mechanisms governing heat conductions. Here, we report molecular dynamics investigations of thermal transport properties in zeolitic imidazolate frameworks (ZIFs). We investigated Linde Type A topological ZIFs (ZIF-lta) exhibiting exceptionally low thermal conductivity with unusual trend of temperature dependence deviating from many crystalline materials, despite long-range crystalline order in them. We demonstrate that heat is predominantly carried by phonons with mean free paths comparable to their wavelengths, analogous to diffusons in amorphous solids owing to strong anharmonicity caused by complexity of unit cell consisting of a large number of metal centers. We further show that adsorbed hydrogen molecules increase thermal conductivity of ZIFs, mainly contributed by additional vibrational modes, as a result of gas-gas or gas-framework interactions. Our work advances fundamental understanding into the thermal transport in MOFs and suggests a means to engineer heat conduction via gas infiltrations.",
+    "authors": [
+      "Hyunseok Oh",
+      "Taeyong Kim"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2508.01624v2"
+  },
+  {
+    "id": "paper_015",
+    "title": "Symmetry-Informed Graph Neural Networks for Carbon Dioxide Isotherm and Adsorption Prediction in Aluminum-Substituted Zeolites",
+    "abstract": "Accurately predicting adsorption properties in nanoporous materials using Deep Learning models remains a challenging task. This challenge becomes even more pronounced when attempting to generalize to structures that were not part of the training data.. In this work, we introduce SymGNN, a graph neural network architecture that leverages material symmetries to improve adsorption property prediction. By incorporating symmetry operations into the message-passing mechanism, our model enhances parameter sharing across different zeolite topologies, leading to improved generalization. We evaluate SymGNN on both interpolation and generalization tasks, demonstrating that it successfully captures key adsorption trends, including the influence of both the framework and aluminium distribution on CO$_2$ adsorption. Furthermore, we apply our model to the characterization of experimental adsorption isotherms, using a genetic algorithm to infer likely aluminium distributions. Our results highlight the effectiveness of machine learning models trained on simulations for studying real materials and suggest promising directions for fine-tuning with experimental data and generative approaches for the inverse design of multifunctional nanomaterials.",
+    "authors": [
+      "Marko Petković",
+      "José-Manuel Vicent Luna",
+      "Elīza Beate Dinne",
+      "Vlado Menkovski",
+      "Sofía Calero"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2503.22737v1"
+  },
+  {
+    "id": "paper_016",
+    "title": "On the Automation of High Throughput Modeling of Adsorption In Porous Zeolitic Imidazolate Frameworks",
+    "abstract": "The zeolitic imidazolate frameworks (ZIF) have emerged as a promising candidate for catalysis, carbon-dioxide (CO$_{2}$) capture and storage as well as flue gas separation due to their tunable porosity and chemical stability. ZIFs consists of transition metals in a tetrahedral coordination with imidazolate linkers, allowing for structural modifications that can enhance CO$_{2}$ adsorption and storage. To systematically design and optimize ZIFs for superior CO$_{2}$ capture performance, theoretical modelling provides an effective approach, though hindered by the sheer size of the search space, with hundred to thousands of possible sites per ZIF, and thousands of possible ZIF that can be synthesized. In this work, we employ a high-throughput techniques underpinned by first-principle Density Functional Theory (DFT) to develop a systematic automated method for characterizing adsorption energetics in ZIFs, guiding the rational design and selection of desirable ZIF structures. Using high-throughput computing tools, we perform pore and pore size analysis, and implement automated CO$_{2}$ molecule placement algorithm, accounting for positional symmetry, crystallographic orientation, and collision detection. The results obtained are in good agreement with previous studies, demonstrating the reliability of the approach in accelerating the discovery of next-generation ZIFs for CO$_{2}$ capture and storage.",
+    "authors": [
+      "Michael O. Atambo",
+      "Korir Kiptiemoi"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2503.10535v3"
+  },
+  {
+    "id": "paper_017",
+    "title": "Removal of Radioactive Noble Gas Radon from Air by Ag-Zeolite",
+    "abstract": "This paper investigates the removal of radon from purified and ambient airs by Ag-zeolite. Ag-zeolite is known to have very high performance for airborne radon removal. The dependence of zeolite type and silver content on the performance of radon removal was evaluated. The performance of radon removal by single pass and radon emanation were also evaluated. In addition, the adsorption performance due to zeolite solidification and the change in adsorption performance due to moisture in the gas were evaluated in order to investigate properties that should be considered for future practical use. These properties will be adaptable to the development of air purification systems for the large volume ultra-low radioactivity experiments.",
+    "authors": [
+      "H. Ogawa",
+      "Y. Takeuchi",
+      "H. Sekiya",
+      "K. Iyoki",
+      "M. Matsukura",
+      "T. Wakihara",
+      "Y. Nakano",
+      "S. Hirano",
+      "A. Taniguchi"
+    ],
+    "year": 2024,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2411.01722v2"
+  },
+  {
+    "id": "paper_018",
+    "title": "Study of radon removal performance of silver-ion exchanged zeolite from air for underground experiments",
+    "abstract": "Radon is a common background source for underground astroparticle physics experiments and its removal is essential. In this study, we fabricated several prototype silver-ion exchanged zeolites, measured their radon adsorption properties, and evaluated their applicability for radon removal in underground experiments. As a result, we succeeded in producing a prototype silver-ion exchanged zeolite that showed better radon adsorption properties than preceding studies.",
+    "authors": [
+      "T. Sone",
+      "Y. Takeuchi",
+      "M. Matsukura",
+      "Y. Nakano",
+      "H. Ogawa",
+      "H. Sekiya",
+      "T. Wakihara",
+      "S. Hirano",
+      "A. Taniguchi"
+    ],
+    "year": 2024,
+    "source": "arXiv",
+    "doi": "10.1093/ptep/ptae181",
+    "arxiv_id": "2410.04979v2"
+  },
+  {
+    "id": "paper_019",
+    "title": "Theory and Modeling of Transport for Simple Fluids in Nanoporous Materials: From Microscopic to Coarse-Grained Descriptions",
+    "abstract": "We present the state-of-the-art theoretical modeling, molecular simulation, and coarse-graining strategies for the transport of gases and liquids in nanoporous materials (pore size 1-100 nm). Special emphasis is placed on the transport of small molecules in zeolites, active carbons, metal-organic frameworks, but also in nanoporous materials with larger pores such as ordered and disordered mesoporous oxides. We present different atomistic and mesoscopic methods as well as the theoretical formalisms. Attention is given to the investigation of different molecular transport coefficients - including the self, collective and transport diffusivities - but also to the determination of free energy barriers and their role in overall adsorption/separation process rates. We also introduce other available approaches such as hierarchical simulations and upscaling strategies. This review focuses on simple fluids in prototypical nanoporous materials. While the phenomena covered here capture the main physical mechanisms in such systems, complex molecules will exhibit additional specific features. For the sake of clarity and brevity, we also omit multicomponent systems (e.g. fluid mixtures, electrolytes, etc.) and electrokinetic effects arising when charged systems are considered (ionic species, charged surfaces, etc.), both of which add to the complexity.",
+    "authors": [
+      "Alexander Schlaich",
+      "Jean-Louis Barrat",
+      "Benoit Coasne"
+    ],
+    "year": 2024,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2406.03039v2"
+  },
+  {
+    "id": "paper_020",
+    "title": "Graph Neural Networks for Carbon Dioxide Adsorption Prediction in Aluminium-Exchanged Zeolites",
+    "abstract": "The ability to efficiently predict adsorption properties of zeolites can be of large benefit in accelerating the design process of novel materials. The existing configuration space for these materials is wide, while existing molecular simulation methods are computationally expensive. In this work, we propose a model which is 4 to 5 orders of magnitude faster at adsorption properties compared to molecular simulations. To validate the model, we generated datasets containing various aluminium configurations for the MOR, MFI, RHO and ITW zeolites along with their heat of adsorptions and Henry coefficients for CO$_2$, obtained from Monte Carlo simulations. The predictions obtained from the Machine Learning model are in agreement with the values obtained from the Monte Carlo simulations, confirming that the model can be used for property prediction. Furthermore, we show that the model can be used for identifying adsorption sites. Finally, we evaluate the capability of our model for generating novel zeolite configurations by using it in combination with a genetic algorithm.",
+    "authors": [
+      "Marko Petković",
+      "José Manuel Vicent-Luna",
+      "Vlado Menkovski",
+      "Sofía Calero"
+    ],
+    "year": 2024,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2403.12659v2"
+  },
+  {
+    "id": "paper_021",
+    "title": "Phase field simulation of dendrite growth in solid-state lithium batteries based on mechanical-thermo-electrochemical coupling",
+    "abstract": "Solid-state lithium batteries possess numerous advantages, such as high energy density, excellent cycle stability, superior mechanical strength, non-flammability, enhanced safety, and extended service life. These characteristics make them highly suitable for applications in aerospace, new energy vehicles, and portable electronic devices. However, the growth of lithium dendrite at the electrode/electrolyte interface remains a critical challenge, limiting both performance and safety. The growth of lithium dendrites in the electrolyte not only reduces the Coulombic efficiency of the battery but also poses a risk of puncturing the electrolyte, leading to internal short circuits between the anode and cathode. This study is to solve the problem of lithium dendrite growth in solid-state lithium batteries by employing phase-field theory for numerical simulations. A phase-field model is developed by coupling the mechanical stress field, thermal field, and electrochemical field, to investigate the morphology and evolution of lithium dendrites under the condition of different ambient temperatures, external pressures, and their combined effects. The results indicate that higher temperature and greater external pressure significantly suppress lithium dendrite growth, leading to fewer side branches, smoother surfaces, and more uniform electrochemical deposition. Increased external pressure inhibits longitudinal dendrite growth, resulting in a compressed morphology with higher compactness, but at the cost of increased mechanical instability. The combined effect of temperature and pressure exhibits a pronounced inhibitory influence on dendrite growth, with stress concentrating at the dendrite roots. This stress distribution promotes lateral growth, facilitating the formation of flatter and denser lithium deposits.",
+    "authors": [
+      "Pengyang Hou",
+      "Jiamiao Xie",
+      "Jingyang Li",
+      "Peng Zhang",
+      "Zhaokai Li",
+      "Wenqian Hao",
+      "Jia Tian",
+      "Zhe Wang",
+      "Fuzheng Li"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": "10.7498/aps.74.20241727",
+    "arxiv_id": "2509.02013v1"
+  },
+  {
+    "id": "paper_022",
+    "title": "Vacuum Dealloyed Brass as Li-Metal Battery Current Collector: Effect of Zinc and Porosity",
+    "abstract": "\"Anode-free\" lithium-metal batteries promise significantly higher energy density than conventional graphite-based lithium-ion batteries; however, lithium dendrite growth can lead to internal short circuits with associated safety risks. While porous current collectors can suppress dendrite growth, optimal porosity and composition remain unknown. Here, we show that the temperature during vapor phase dealloying (VPD) of alpha-brass (Cu63Zn37) controls the surface Zn concentration, decreasing from 8 percent to below 1 percent from 500 to 800 degrees C. The surface composition is controlled by the temperature-dependent diffusion. A battery cell maintains greater than 90 percent Coulombic efficiency (CE) over 100 cycles when the Zn content is the lowest, whereas the higher-Zn samples degraded to approximately 70 percent CE. The difference in surface composition has hence dramatic effects on battery performance, and our results demonstrate how precise compositional control enables stable lithium-metal battery operation, establishing about 1 atomic percent surface Zn as optimal for preventing capacity fading and uniform lithium plating, while establishing predictive relationships between processing temperature and surface composition. This work provides design rules for multifunctional current collectors and demonstrates scalable VPD production for next-generation batteries.",
+    "authors": [
+      "Eric V Woods",
+      "Xinren Chen",
+      "Shaolou Wei",
+      "Yuwei Zhang",
+      "Alisson Kwiatkowski da Silva",
+      "Ayman A El-Zoka",
+      "J Manoj Prabhakar",
+      "Tim M Schwarz",
+      "Yongqiang Kang",
+      "Leonardo S Aota",
+      "Mahander P Singh",
+      "Katja Angenendt",
+      "Ozge Ozgun",
+      "Matic Jovivcevic-Klug",
+      "Patricia Jovivcevic-Klug",
+      "Christian Bross",
+      "Jian Liu",
+      "Rene de Kloe",
+      "Gerhard Dehm",
+      "Stefan Zaefferer",
+      "Yug Joshi",
+      "Baptiste Gault"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2508.06015v2"
+  },
+  {
+    "id": "paper_023",
+    "title": "Residual Connection-Enhanced ConvLSTM for Lithium Dendrite Growth Prediction",
+    "abstract": "The growth of lithium dendrites significantly impacts the performance and safety of rechargeable batteries, leading to short circuits and capacity degradation. This study proposes a Residual Connection-Enhanced ConvLSTM model to predict dendrite growth patterns with improved accuracy and computational efficiency. By integrating residual connections into ConvLSTM, the model mitigates the vanishing gradient problem, enhances feature retention across layers, and effectively captures both localized dendrite growth dynamics and macroscopic battery behavior. The dataset was generated using a phase-field model, simulating dendrite evolution under varying conditions. Experimental results show that the proposed model achieves up to 7% higher accuracy and significantly reduces mean squared error (MSE) compared to conventional ConvLSTM across different voltage conditions (0.1V, 0.3V, 0.5V). This highlights the effectiveness of residual connections in deep spatiotemporal networks for electrochemical system modeling. The proposed approach offers a robust tool for battery diagnostics, potentially aiding in real-time monitoring and optimization of lithium battery performance. Future research can extend this framework to other battery chemistries and integrate it with real-world experimental data for further validation",
+    "authors": [
+      "Hosung Lee",
+      "Byeongoh Hwang",
+      "Dasan Kim",
+      "Myungjoo Kang"
+    ],
+    "year": 2025,
+    "source": "arXiv",
+    "doi": "10.1149/1945-7111/ade633",
+    "arxiv_id": "2506.17756v1"
+  },
+  {
+    "id": "paper_024",
+    "title": "Nanostructured S@VACNTs Cathode with Lithium Sulfate Barrier Layer for Exceptionally Stable Cycling in Lithium-Sulfur Batteries",
+    "abstract": "Lithium-sulfur technology garners significant interest due to sulfur's higher specific capacity, cost-effectiveness, and environmentally friendly aspects. However, sulfur's insulating nature and poor cycle life hinder practical application. To address this, a simple modification to the traditional sulfur electrode configuration is implemented, aiming to achieve high capacity, long cycle life, and rapid charge rates. Binder-free sulfur cathode materials are developed using vertically aligned carbon nanotubes (CNTs) decorated with sulfur and a lithium sulfate barrier layer. The aligned CNT framework provides high conductivity for electron transportation and short lithium-ion pathways. Simultaneously, the sulfate barrier layer significantly suppresses the shuttle of polysulfides. The S@VACNTs with Li 2 SO 4 coating exhibit an extremely stable reversible areal capacity of 0.9 mAh cm --2 after 1600 cycles at 1 C with a capacity retention of 80% after 1200 cycles, over three times higher than lithium iron phosphate cathodes cycled at the same rate. Considering safety concerns related to the formation of lithium dendrite, a full cell Si-Li-S is assembled, displaying good electrochemical performances for up to 100 cycles. The combination of advanced electrode architecture using 1D conductive scaffold with high-specific-capacity active material and the implementation of a novel strategy to suppress polysulfides drastically improves the stability and the performance of Li-S batteries.",
+    "authors": [
+      "Mariam Ezzedine",
+      "Fatme Jardali",
+      "Ileana Florea",
+      "Costel-Sorin Cojocaru"
+    ],
+    "year": 2024,
+    "source": "arXiv",
+    "doi": "10.1149/1945-7111/ad47d5",
+    "arxiv_id": "2409.03286v1"
+  },
+  {
+    "id": "paper_025",
+    "title": "The role of chemo-mechanical modelling in the development of battery technology -- a perspective",
+    "abstract": "In the race to reduce global CO2 emissions and achieve net-zero, chemomechanics must play a critical role in the technological development of current and next-generation batteries to improve their energy storage capabilities and their lifetime. Many degradation processes arise through mechanics via the development of diffusion-induced stress and volumetric strains within the various constituent materials in a battery. From particle cracking in lithium-ion batteries to lithium dendrite-based fracture of solid electrolytes in solid-state batteries, it is clear that significant barriers exist in the development of these energy storage systems, where chemomechanics plays a central part. To accelerate technological and scientific advances in this area, multi-scale and highly coupled multiphysics modelling must be carried out that includes mechanics-based phenomena. In this perspective article, we provide an introduction to chemomechanical modelling, the various physical problems that it addresses, and the issues that need to be resolved in order to expand its use within the field of battery technology.",
+    "authors": [
+      "A. Boyce",
+      "E. Martínez-Pañeda",
+      "P. R. Shearing"
+    ],
+    "year": 2024,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2403.19244v1"
+  },
+  {
+    "id": "paper_026",
+    "title": "Towards the mechanism and high performance of solid-state Li batteries",
+    "abstract": "Recently some critical problems and challenges have been exposed, hindering the development and practical application of SSLBs, such as the low room temperature ionic conductivity of solid electrolyte, the risk of short circuit caused by lithium dendrite piercing the electrolyte, etc. In order to address these challenges, it's essential to obtain in-depth insights into mechanisms and systematic optimization of SSLBs, including interfaces, electrolytes, and battery structures. Here, this minireview provides a brief summary, including strategies for electrode and electrolyte preparation, advanced battery characterization techniques, and the latest computational and simulation methods to advance understanding of kinetic or atomic scale mechanisms. The above contents will play an active role in promoting the development and practical application of safer and higher performance SSLBs.",
+    "authors": [
+      "L. J. Zhang"
+    ],
+    "year": 2023,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2307.16701v1"
+  },
+  {
+    "id": "paper_027",
+    "title": "Three-dimensional experimental-scale phase-field modelling of dendrite formation in rechargeable lithium-metal batteries",
+    "abstract": "We perform phase-field simulations of the electrodeposition process that forms dendrites within metal-anode batteries including anisotropic representation. We describe the evolution of a phase field, the lithium-ion concentration, and an electric potential, during a battery charge cycle, solving equations using time-marching algorithms with automatic time-step adjustment and implemented on an open-source finite element library. A modified lithium crystal surface anisotropy representation for phase-field electrodeposition model is proposed and evaluated through different numerical tests, exhibiting low sensitivity to the numerical parameters. Change of dendritic morphological behaviour is captured by a variation of the simulated inter-electrode distance. A set of simulations are presented to validate the proposed formulation, showing their agreement with experimentally-observed lithium dendrite growth rates, and morphologies reported in the literature.",
+    "authors": [
+      "Marcos E. Arguello",
+      "Nicolas A. Labanda",
+      "Victor M. Calo",
+      "Monica Gumulya",
+      "Ranjeet Utikar",
+      "Jos Derksen"
+    ],
+    "year": 2022,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2208.12902v1"
+  },
+  {
+    "id": "paper_028",
+    "title": "Dynamics of the lithium metal electrodeposition: Effects of a gas bubble",
+    "abstract": "Rechargeable lithium metal batteries have been widely investigated recently, driven by the global trend for the electrification of transportation. Understanding the dynamics of lithium metal electrodeposition is crucial to design safe and reliable lithium metal anodes. In this study, we developed a grand potential-based phase-field model to investigate the effect of a static gas bubble, which forms due to the complicated internal side reactions, on the dynamics of the dendrite growth during electrodeposition. It is observed that with the presence of a gas bubble, the dendrite growth is largely accelerated, due to the accumulation of lithium ions on the far side of the bubble away from the anode surface, which could serve as an ion \"reservoir\" for the dendrite growth, leading to the bending/tilting of the lithium dendrites toward the bubble. Meanwhile, the effects of the bubble size and distance to the anode are further studied, demonstrating that the larger the bubble size and the closer to the anode, the longer the lithium dendrites grow. We hope this study could serve as an example to exploit the effect of extrinsic factors on the dendrite growth dynamics.",
+    "authors": [
+      "Shoutong Jin",
+      "Linming Zhou",
+      "Yongjun Wu",
+      "Shang Zhu",
+      "Qilong Zhang",
+      "Hui Yang",
+      "Yuhui Huang",
+      "Zijian Hong"
+    ],
+    "year": 2022,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2207.06491v1"
+  },
+  {
+    "id": "paper_029",
+    "title": "Modulating nano-inhomogeneity at electrode-solid electrolyte interfaces for dendrite-proof solid-state batteries and long-life memristors",
+    "abstract": "The penetration of dendrites in ceramic lithium conductors severely constrains the development of solid-state batteries (SSBs) while its nanoscopic origin remain unelucidated. We develop an in-situ nanoscale electrochemical characterization technique to reveal the nanoscopic lithium dendrite growth kinetics and use it as a guiding tool to unlock the design of interfaces for dendrite-proof SSBs. Using Li7La3Zr2O12 (LLZO) as a model system, in-situ nanoscopic dendrite triggering measurements, ex-situ electro-mechanical characterizations, and finite element simulations are carried out which reveal the dominating role of Li+ flux detouring and nano-mechanical inhomogeneity on dendrite penetration. To mitigate such nano-inhomogeneity, an ionic-conductive homogenizing layer based on poly(propylene carbonate) is designed which in-situ reacts with lithium to form a highly conformal interphase at mild conditions. A high critical current density of 1.8mA cm-2 and a low interfacial resistance of 14Ω cm2 is achieved. Practical SSBs based on LiFePO4 cathodes show great cyclic stability without capacity decay over 300 cycles. Beyond this, highly reversible electrochemical dendrite healing behavior in LLZO is discovered using the nano-electrode, based on which a model memristor with a high on/off ratio of ~10^5 is demonstrated for >200 cycles. This work not only provides a novel tool to investigate and design interfaces in SSBs but offers also new opportunities for solid electrolytes beyond energy applications.",
+    "authors": [
+      "Ziheng Lu",
+      "Ziwei Yang",
+      "Cheng Li",
+      "Kai Wang",
+      "Jinlong Han",
+      "Peifei Tong",
+      "Guoxiao Li",
+      "Bairav Sabarish Vishnugopi",
+      "Partha P. Mukherjee",
+      "Chunlei Yang"
+    ],
+    "year": 2020,
+    "source": "arXiv",
+    "doi": "10.1002/aenm.202003811",
+    "arxiv_id": "2010.01624v3"
+  },
+  {
+    "id": "paper_030",
+    "title": "An interlayer with low solubility for lithium enhances tolerance to dendrite growth in solid state electrolytes",
+    "abstract": "All solid state Li-ion batteries employing metallic lithium as an anode offer higher energy densities while also being safer than conventional liquid electrolyte based Li-ion batteries. However, the growth of tiny filaments of lithium (dendrites) across the solid state electrolyte layer leads to premature shorting of cells and limits their practical viability. The microscopic mechanisms that lead to lithium dendrite growth in solid state cells are still unclear. Using garnet based lithium ion conductor as a model solid state electrolyte, we show that interfacial void growth during lithium dissolution precedes dendrite nucleation and growth. Using a simple electrostatic model, we show that current density at the edges of the voids could be amplified by as much as four orders of magnitude making the cells highly susceptible to dendrite growth after void formation. We propose the use of metallic interlayers with low solubility and high nucleation overpotential for lithium to delay void growth. These interlayers increase dendrite growth tolerance in solid state electrolytes without the undue necessity for high stack pressures.",
+    "authors": [
+      "Vikalp Raj",
+      "Varun R Kankanallu",
+      "Bibhatsu Kuiri",
+      "Naga Phani B Aetukuri"
+    ],
+    "year": 2020,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2001.06276v1"
+  },
+  {
+    "id": "paper_031",
+    "title": "Advancing Digital Twin Generation Through a Novel Simulation Framework and Quantitative Benchmarking",
+    "abstract": "The generation of 3D models from real-world objects has often been accomplished through photogrammetry, i.e., by taking 2D photos from a variety of perspectives and then triangulating matched point-based features to create a textured mesh. Many design choices exist within this framework for the generation of digital twins, and differences between such approaches are largely judged qualitatively. Here, we present and test a novel pipeline for generating synthetic images from high-quality 3D models and programmatically generated camera poses. This enables a wide variety of repeatable, quantifiable experiments which can compare ground-truth knowledge of virtual camera parameters and of virtual objects against the reconstructed estimations of those perspectives and subjects.",
+    "authors": [
+      "Jacob Rubinstein",
+      "Avi Donaty",
+      "Don Engel"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.11314v1"
+  },
+  {
+    "id": "paper_032",
+    "title": "AI Infrastructure Sovereignty",
+    "abstract": "Artificial intelligence has shifted from a software-centric discipline to an infrastructure-driven system. Large-scale training and inference increasingly depend on tightly coupled data centers, high-capacity optical networks, and energy systems operating close to physical and environmental limits. As a result, control over data and algorithms alone is no longer sufficient to achieve meaningful AI sovereignty. Practical sovereignty now depends on who can deploy, operate, and adapt AI infrastructure under constraints imposed by energy availability, sustainability targets, and network reach. This tutorial-survey introduces the concept of AI infrastructure sovereignty, defined as the ability of a region, operator, or nation to exercise operational control over AI systems within physical and environmental limits. The paper argues that sovereignty emerges from the co-design of three layers: AI-oriented data centers, optical transport networks, and automation frameworks that provide real-time visibility and control. We analyze how AI workloads reshape data center design, driving extreme power densities, advanced cooling requirements, and tighter coupling to local energy systems, with sustainability metrics such as carbon intensity and water usage acting as hard deployment boundaries. We then examine optical networks as the backbone of distributed AI, showing how latency, capacity, failure domains, and jurisdictional control define practical sovereignty limits. Building on this foundation, the paper positions telemetry, agentic AI, and digital twins as enablers of operational sovereignty through validated, closed-loop control across compute, network, and energy domains. The tutorial concludes with a reference architecture for sovereign AI infrastructure that integrates telemetry pipelines, agent-based control, and digital twins, framing sustainability as a first-order design constraint.",
+    "authors": [
+      "Sergio Cruzes"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.10900v1"
+  },
+  {
+    "id": "paper_033",
+    "title": "Patient Digital Twins for Chronic Care: Technical Hurdles, Lessons Learned, and the Road Ahead",
+    "abstract": "Chronic diseases constitute the principal burden of morbidity, mortality, and healthcare costs worldwide, yet current health systems remain fragmented and predominantly reactive. Patient Medical Digital Twins (PMDTs) offer a paradigm shift: holistic, continuously updated digital counterparts of patients that integrate clinical, genomic, lifestyle, and quality-of-life data. We report early implementations of PMDTs via ontology-driven modeling and federated analytics pilots. Insights from the QUALITOP oncology study and a distributed AI platform confirm both feasibility and challenges: aligning with HL7 FHIR and OMOP standards, embedding privacy governance, scaling federated queries, and designing intuitive clinician interfaces. We also highlight technical gains, such as automated reasoning over multimodal blueprints and predictive analytics for patient outcomes. By reflecting on these experiences, we outline actionable insights for software engineers and identify opportunities, such as DSLs and model-driven engineering, to advance PMDTs toward trustworthy, adaptive chronic care ecosystems.",
+    "authors": [
+      "Micheal P. Papazoglou",
+      "Bernd J. Krämer",
+      "Mira Raheem",
+      "Amal Elgammal"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.11223v1"
+  },
+  {
+    "id": "paper_034",
+    "title": "CompSplat: Compression-aware 3D Gaussian Splatting for Real-world Video",
+    "abstract": "High-quality novel view synthesis (NVS) from real-world videos is crucial for applications such as cultural heritage preservation, digital twins, and immersive media. However, real-world videos typically contain long sequences with irregular camera trajectories and unknown poses, leading to pose drift, feature misalignment, and geometric distortion during reconstruction. Moreover, lossy compression amplifies these issues by introducing inconsistencies that gradually degrade geometry and rendering quality. While recent studies have addressed either long-sequence NVS or unposed reconstruction, compression-aware approaches still focus on specific artifacts or limited scenarios, leaving diverse compression patterns in long videos insufficiently explored. In this paper, we propose CompSplat, a compression-aware training framework that explicitly models frame-wise compression characteristics to mitigate inter-frame inconsistency and accumulated geometric errors. CompSplat incorporates compression-aware frame weighting and an adaptive pruning strategy to enhance robustness and geometric consistency, particularly under heavy compression. Extensive experiments on challenging benchmarks, including Tanks and Temples, Free, and Hike, demonstrate that CompSplat achieves state-of-the-art rendering quality and pose accuracy, significantly surpassing most recent state-of-the-art NVS approaches under severe compression conditions.",
+    "authors": [
+      "Hojun Song",
+      "Heejung Choi",
+      "Aro Kim",
+      "Chae-yeong Song",
+      "Gahyeon Kim",
+      "Soo Ye Kim",
+      "Jaehyup Lee",
+      "Sang-hyo Park"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.09816v1"
+  },
+  {
+    "id": "paper_035",
+    "title": "Digital-Twin-Aided Dynamic Spectrum Sharing and Resource Management in Integrated Satellite-Terrestrial Networks",
+    "abstract": "The explosive growth in wireless service demand has prompted the evolution of integrated satellite-terrestrial networks (ISTNs) to overcome the limitations of traditional terrestrial networks (TNs) in terms of coverage, spectrum efficiency, and deployment cost. Particularly, leveraging LEO satellites and dynamic spectrum sharing (DSS), ISTNs offer promising solutions but face significant challenges due to diverse terrestrial environments, user and satellite mobility, and long propagation LEO-to-ground distance. To address these challenges, digitial-twin (DT) has emerged as a promising technology to offer virtual replicas of real-world systems, facilitating prediction for resource management. In this work, we study a time-window-based DT-aided DSS framework for ISTNs, enabling joint long-term and short-term resource decisions to reduce system congestion. Based on that, two optimization problems are formulated, which aim to optimize resource management using DT information and to refine obtained solutions with actual real-time information, respectively. To efficiently solve these problems, we proposed algorithms using compressed-sensing-based and successive convex approximation techniques. Simulation results using actual traffic data and the London 3D map demonstrate the superiority in terms of congestion minimization of our proposed algorithms compared to benchmarks. Additionally, it shows the adaptation ability and practical feasibility of our proposed solutions.",
+    "authors": [
+      "Hung Nguyen-Kha",
+      "Vu Nguyen Ha",
+      "Ti Nguyen",
+      "Eva Lagunas",
+      "Joel Grotz",
+      "Symeon Chatzinotas",
+      "Björn Ottersten"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.09191v1"
+  },
+  {
+    "id": "paper_036",
+    "title": "TwinRL-VLA: Digital Twin-Driven Reinforcement Learning for Real-World Robotic Manipulation",
+    "abstract": "Despite strong generalization capabilities, Vision-Language-Action (VLA) models remain constrained by the high cost of expert demonstrations and insufficient real-world interaction. While online reinforcement learning (RL) has shown promise in improving general foundation models, applying RL to VLA manipulation in real-world settings is still hindered by low exploration efficiency and a restricted exploration space. Through systematic real-world experiments, we observe that the effective exploration space of online RL is closely tied to the data distribution of supervised fine-tuning (SFT). Motivated by this observation, we propose TwinRL, a digital twin-real-world collaborative RL framework designed to scale and guide exploration for VLA models. First, a high-fidelity digital twin is efficiently reconstructed from smartphone-captured scenes, enabling realistic bidirectional transfer between real and simulated environments. During the SFT warm-up stage, we introduce an exploration space expansion strategy using digital twins to broaden the support of the data trajectory distribution. Building on this enhanced initialization, we propose a sim-to-real guided exploration strategy to further accelerate online RL. Specifically, TwinRL performs efficient and parallel online RL in the digital twin prior to deployment, effectively bridging the gap between offline and online training stages. Subsequently, we exploit efficient digital twin sampling to identify failure-prone yet informative configurations, which are used to guide targeted human-in-the-loop rollouts on the real robot. In our experiments, TwinRL approaches 100% success in both in-distribution regions covered by real-world demonstrations and out-of-distribution regions, delivering at least a 30% speedup over prior real-world RL methods and requiring only about 20 minutes on average across four tasks.",
+    "authors": [
+      "Qinwen Xu",
+      "Jiaming Liu",
+      "Rui Zhou",
+      "Shaojun Shi",
+      "Nuowei Han",
+      "Zhuoyang Liu",
+      "Chenyang Gu",
+      "Shuo Gu",
+      "Yang Yue",
+      "Gao Huang",
+      "Wenzhao Zheng",
+      "Sirui Han",
+      "Peng Jia",
+      "Shanghang Zhang"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.09023v1"
+  },
+  {
+    "id": "paper_037",
+    "title": "Digital Twin and Agentic AI for Wild Fire Disaster Management: Intelligent Virtual Situation Room",
+    "abstract": "According to the United Nations, wildfire frequency and intensity are projected to increase by approximately 14% by 2030 and 30% by 2050 due to global warming, posing critical threats to life, infrastructure, and ecosystems. Conventional disaster management frameworks rely on static simulations and passive data acquisition, hindering their ability to adapt to arbitrarily evolving wildfire episodes in real-time. To address these limitations, we introduce the Intelligent Virtual Situation Room (IVSR), a bidirectional Digital Twin (DT) platform augmented by autonomous AI agents. The IVSR continuously ingests multisource sensor imagery, weather data, and 3D forest models to create a live virtual replica of the fire environment. A similarity engine powered by AI aligns emerging conditions with a precomputed Disaster Simulation Library, retrieving and calibrating intervention tactics under the watchful eyes of experts. Authorized action-ranging from UAV redeployment to crew reallocation-is cycled back through standardized procedures to the physical layer, completing the loop between response and analysis. We validate IVSR through detailed case-study simulations provided by an industrial partner, demonstrating capabilities in localized incident detection, privacy-preserving playback, collider-based fire-spread projection, and site-specific ML retraining. Our results indicate marked reductions in detection-to-intervention latency and more effective resource coordination versus traditional systems. By uniting real-time bidirectional DTs with agentic AI, IVSR offers a scalable, semi-automated decision-support paradigm for proactive, adaptive wildfire disaster management.",
+    "authors": [
+      "Mohammad Morsali",
+      "Siavash H. Khajavi"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.08949v1"
+  },
+  {
+    "id": "paper_038",
+    "title": "Picasso: Holistic Scene Reconstruction with Physics-Constrained Sampling",
+    "abstract": "In the presence of occlusions and measurement noise, geometrically accurate scene reconstructions -- which fit the sensor data -- can still be physically incorrect. For instance, when estimating the poses and shapes of objects in the scene and importing the resulting estimates into a simulator, small errors might translate to implausible configurations including object interpenetration or unstable equilibrium. This makes it difficult to predict the dynamic behavior of the scene using a digital twin, an important step in simulation-based planning and control of contact-rich behaviors. In this paper, we posit that object pose and shape estimation requires reasoning holistically over the scene (instead of reasoning about each object in isolation), accounting for object interactions and physical plausibility. Towards this goal, our first contribution is Picasso, a physics-constrained reconstruction pipeline that builds multi-object scene reconstructions by considering geometry, non-penetration, and physics. Picasso relies on a fast rejection sampling method that reasons over multi-object interactions, leveraging an inferred object contact graph to guide samples. Second, we propose the Picasso dataset, a collection of 10 contact-rich real-world scenes with ground truth annotations, as well as a metric to quantify physical plausibility, which we open-source as part of our benchmark. Finally, we provide an extensive evaluation of Picasso on our newly introduced dataset and on the YCB-V dataset, and show it largely outperforms the state of the art while providing reconstructions that are both physically plausible and more aligned with human intuition.",
+    "authors": [
+      "Xihang Yu",
+      "Rajat Talak",
+      "Lorenzo Shaikewitz",
+      "Luca Carlone"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.08058v1"
+  },
+  {
+    "id": "paper_039",
+    "title": "The Law of Task-Achieving Body Motion: Axiomatizing Success of Robot Manipulation Actions",
+    "abstract": "Autonomous agents that perform everyday manipulation actions need to ensure that their body motions are semantically correct with respect to a task request, causally effective within their environment, and feasible for their embodiment. In order to enable robots to verify these properties, we introduce the Law of Task-Achieving Body Motion as an axiomatic correctness specification for body motions. To that end we introduce scoped Task-Environment-Embodiment (TEE) classes that represent world states as Semantic Digital Twins (SDTs) and define applicable physics models to decompose task achievement into three predicates: SatisfiesRequest for semantic request satisfaction over SDT state evolution; Causes for causal sufficiency under the scoped physics model; and CanPerform for safety and feasibility verification at the embodiment level. This decomposition yields a reusable, implementation-independent interface that supports motion synthesis and the verification of given body motions. It also supports typed failure diagnosis (semantic, causal, embodiment and out-of-scope), feasibility across robots and environments, and counterfactual reasoning about robot body motions. We demonstrate the usability of the law in practice by instantiating it for articulated container manipulation in kitchen environments on three contrasting mobile manipulation platforms",
+    "authors": [
+      "Malte Huerkamp",
+      "Jonas Dech",
+      "Michael Beetz"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.06572v1"
+  },
+  {
+    "id": "paper_040",
+    "title": "Advances in Battery Energy Storage Management: Control and Economic Synergies",
+    "abstract": "The existing literature on Battery Energy Storage Systems (BESS) predominantly focuses on two main areas: control system design aimed at achieving grid stability and the techno-economic analysis of BESS dispatch on power grid. However, with the increasing incorporation of ancillary services into power grids, a more comprehensive approach to energy management systems is required. Such an approach should not only optimize revenue generation from BESS but also ensure the safe, efficient, and reliable operation of lithium-ion batteries. This research seeks to bridge this gap by exploring literature that addresses both the economic and operational dimensions of BESS. Specifically, it examines how economic aspects of grid duty cycles can align with control schemes deployed in BESS systems. This alignment, or synergy, could be instrumental in creating robust digital twins virtual representations of BESS systems that enhance both grid stability and revenue potential. The literature review is organized into five key categories: (1) ancillary services for BESS, exploring support functions that BESS can provide to power grids; (2) control systems developed for real-time BESS power flow management, ensuring smooth operations under dynamic grid conditions; (3) optimization algorithms for BESS dispatch, focusing on efficient energy allocation strategies; (4) techno-economic analyses of BESS and battery systems to assess their financial viability; and (5) digital twin technologies for real-world BESS deployments, enabling advanced predictive maintenance and performance optimization. This review will identify potential synergies, research gaps, and emerging trends, paving the way for future innovations in BESS management and deployment strategies.",
+    "authors": [
+      "Venkata Rajesh Chundru",
+      "Shreshta Rajakumar Deshpande",
+      "Stanislav A Gankov"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.06365v1"
+  },
+  {
+    "id": "paper_041",
+    "title": "Benchmarking of Massively Parallel Phase-Field Codes for Directional Solidification",
+    "abstract": "We present a detailed benchmark comparing two state-of-the-art phase-field implementations for simulating alloy solidification under experimentally relevant conditions. The study investigates the directional solidification of Al-3wt%Cu under additive manufacturing conditions and SCN-0.46wt% camphor under microgravity conditions from National Aeronautics and Space Administration (NASA) DECLIC-DSI-R experiments. Both codes, one employing finite-difference discretization with uniform mesh and GPU-acceleration and the other one employing finite-element discretization with adaptive-mesh and CPU-parallelization, solve the same quantitative phase-field formulation that incorporates an anti-trapping current for the solidification of dilute alloys. We evaluate the predictions of each code for dendritic morphology, primary spacing, and tip dynamics in both 2D and 3D, as well as their numerical convergence and computational performance. While existing benchmark problems have primarily focused on simplified or small-scale simulations, they do not reflect the computational and modeling challenges posed by employing experimentally relevant time and length scales. Our results provide a practical framework for assessing phase-field code performance as well as validating and facilitating their application in integrated computational materials engineering (ICME) workflows that require integration with realistic experimental data.",
+    "authors": [
+      "Jiefu Tian",
+      "David Montiel",
+      "Kaihua Ji",
+      "Trevor Lyons",
+      "Jason Landini",
+      "Katsuyo Thornton",
+      "Alain Karma"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.10316v1"
+  },
+  {
+    "id": "paper_042",
+    "title": "Comprehensive Study of 3D Liquid Flow Fields in Additive Manufactured Structures for SMART Reactors Using Large-Scale Vertical Magnetic Resonance Imaging and Computational Fluid Dynamics",
+    "abstract": "Triply Periodic Minimal Surface (TPMS) structures have emerged as a new class of porous materials with variable geometries and favourable transport properties, making them promising for reactor internals in chemical engineering. However, experimental data on internal TPMS flow behaviour are still limited. To address this gap, the flow behaviour in additively manufactured TPMS structures is analysed using three-dimensional Magnetic Resonance Imaging (MRI) velocimetry in a large-bore vertical 3 T MRI system, in cylindrical columns of 38 mm diameter and Reynolds numbers between 50 and 300. Three different TPMS geometries are investigated, and consistency between Computational Fluid Dynamics (CFD) simulations and experimentally measured MRI velocity fields is established through cross-validation. The MRI system provides fully three-dimensional velocity fields with a divergence deviation below 6 %. MRI revealed distinct flow features: the Gyroid TPnS exhibited pronounced channelling, while the Schwarz-Diamond TPSf showed merge-split behaviour, achieving a 46 % increase in lateral mixing compared to the Gyroid TPnS structures. Numerical simulations reproduce the flow features and show agreement with the MRI data. The combined methodology demonstrates the suitability of MRI velocimetry for the experimental validation of CFD simulations and establishes a robust foundation for future studies of heat and mass transfer, as well as reactive flow, in structured reactor systems.",
+    "authors": [
+      "Timo Merbach",
+      "Muhammad Adrian",
+      "Christoph Wigger",
+      "Selma Iraqi Houssaini",
+      "Benedict Bayer",
+      "Artyom Tsanda",
+      "Serhan Acikgöz",
+      "Christian Weiland",
+      "Felix Kexel",
+      "Dirk Herzog",
+      "Marko Hoffmann",
+      "Ingomar Kelbassa",
+      "Tobias Knopp",
+      "Alexander Penn",
+      "Michael Schlüter"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.09750v1"
+  },
+  {
+    "id": "paper_043",
+    "title": "Optimization of Precipitate Segmentation Through Linear Genetic Programming of Image Processing",
+    "abstract": "Current analysis of additive manufactured niobium-based copper alloys relies on hand annotation due to varying contrast, noise, and image artifacts present in micrographs, slowing iteration speed in alloy development. We present a filtering and segmentation algorithm for detecting precipitates in FIB cross-section micrographs, optimized using linear genetic programming (LGP), which accounts for the various artifacts. To this end, the optimization environment uses a domain-specific language for image processing to iterate on solutions. Programs in this language are a list of image-filtering blocks with tunable parameters that sequentially process an input image, allowing for reliable generation and mutation by a genetic algorithm. Our environment produces optimized human-interpretable MATLAB code representing an image filtering pipeline. Under ideal conditions--a population size of 60 and a maximum program length of 5 blocks--our system was able to find a near-human accuracy solution with an average evaluation error of 1.8% when comparing segmentations pixel-by-pixel to a human baseline using an XOR error evaluation. Our automation work enabled faster iteration cycles and furthered exploration of the material composition and processing space: our optimized pipeline algorithm processes a 3.6 megapixel image in about 2 seconds on average. This ultimately enables convergence on strong, low-activation, precipitation hardened copper alloys for additive manufactured fusion reactor parts.",
+    "authors": [
+      "Kyle Williams",
+      "Andrew Seltzman"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.07310v1"
+  },
+  {
+    "id": "paper_044",
+    "title": "A Low-Cost, Strong, and Ductile Single-Phase Nb-Based Refractory Complex Concentrated Alloy",
+    "abstract": "The development of structural materials capable of sustained operation above 1200 °C is critical for next-generation energy and aerospace systems; however, Ni-based superalloys are fundamentally constrained by their melting temperatures, while conventional Nb-based refractory alloys are limited by modest specific strength and high cost. Here, we report on the design and mechanical performance of a cost-effective, non-equiatomic refractory complex concentrated alloy (RCCA), Nb45Ta15Ti20V20, engineered to overcome these limitations. Specifically, its specific strength surpasses wrought C-103 and rivals additively manufactured (AM) C-103 at temperatures up to 1300 °C while maintaining extensive room temperature tensile ductility (>10 %). Coupled with a high melting point (~2167 °C), reduced density (8.67 g/cc), and a raw material cost of ~$130/kg compared to >$500/kg for wrought C-103 and >$2,500/kg for AM C-103, this alloy delivers superior specific strength-cost efficiency, highlighting the promise of non-equiatomic RCCAs as viable alternatives to commercial refractory alloys.",
+    "authors": [
+      "Ayeman M. Nahin",
+      "Jacob Pustelnik",
+      "Jessica Dong",
+      "Tamanna Zakia",
+      "Mingwei Zhang"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2602.07293v1"
+  },
+  {
+    "id": "paper_045",
+    "title": "3D-Printed Hybrid Liquid-CPCM Cooling Modules for High-Performance Thermal Management of Lithium-Ion Pouch Cells",
+    "abstract": "Efficient thermal management is critical for ensuring the safety, performance, and durability of lithium ion pouch cells (LIPCs), particularly under high power operating conditions where conventional battery thermal management systems (BTMS) struggle to balance cooling effectiveness, structural simplicity, and weight. Here, we report a lightweight hybrid BTMS that synergistically integrates active liquid cooling with composite phase change material (CPCM) based thermal buffering through a 3D printed hexagonal architecture. The system is fabricated via a two step additive manufacturing process that enables sealed CPCM encapsulation and isolated liquid cooling pathways within a single carbon fiber reinforced nylon module, effectively eliminating leakage risks while allowing precise geometric control. Hexagonally partitioned CPCM cavities maximize the CPCM wall interfacial area and shorten internal conduction paths, accelerating latent heat absorption, while embedded serpentine liquid channels provide continuous convective heat removal and prevent CPCM saturation. A nanocarbon enhanced CPCM is employed to overcome the intrinsic low thermal conductivity of conventional paraffin based materials.",
+    "authors": [
+      "Xuguang Zhanga",
+      "Michael C. Halbig",
+      "Amjad Almansour",
+      "Mrityunjay Singh",
+      "Meelad Ranaiefar",
+      "Yi Zheng"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2601.18959v1"
+  },
+  {
+    "id": "paper_046",
+    "title": "Nanodroplet-Confined Electroplating Enables Submicron Printing of Metals and Oxide Ceramics",
+    "abstract": "The fabrication of functional micro- and nano-electronic devices requires the deposition of high-quality materials of different electronic material classes, such as conductors, semiconductors and insulators. To establish ultra-high-resolution additive manufacturing as a viable addition to existing fabrication methods requires the combinatorial additive deposition of different electronic material classes. However, current techniques do not provide such a capability. Here, we demonstrate that droplet confined electroplating, an ultra-high-resolution AM technique initially developed for metals as electrohydrodynamic redox printing (EHD-RP), allows not only the direct deposition of many metals, but also of metal-oxides. Particularly, we demonstrate that applying fundamental electrochemical principles in combination with on-the-fly switching of the deposited material allows for the direct co-deposition of metals, metal-hydroxides and -oxides. Our results exemplify the feasibility of leveraging simple water-based electrochemical concepts to produce intricate and multi-material structures at the nanoscale.",
+    "authors": [
+      "Mirco Nydegger",
+      "Rebecca A. Gallivan",
+      "Arthur Barras",
+      "Henning Galinski",
+      "Ralph Spolenak"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2601.14576v2"
+  },
+  {
+    "id": "paper_047",
+    "title": "Computational Design of Ductile Additively Manufactured Tungsten-Based Refractory Alloys",
+    "abstract": "Tungsten exhibits exceptional temperature and radiation resistance, making it well-suited for applications in extreme environments such as nuclear fusion reactors. Additive manufacturing offers geometrical design freedom and rapid prototyping capabilities for these applications, provided the intrinsic brittleness and low printability of tungsten can be overcome. Designing tungsten alloys with improved ductility, and thus printability in additive manufacturing, can be accelerated using a computationally derived performance predictor to screen out brittle compositions. Calculations of the Pugh ratio using density functional theory may serve this purpose, given its correlation with ductility. This process can be made more efficient through the use of machine learning interatomic potentials to accelerate density functional theory calculations. Here, we demonstrate that machine learning interatomic potentials can effectively identify optimal alloy compositions in the W-Ta-Nb system along the melting point-Pugh ratio Pareto front. The trend in Pugh ratio as a function of tungsten fraction is explained in terms of the electronic density of states at the Fermi level. Experimental validation reveals a strong correlation between the computed Pugh ratio and the observed crack fractions in additively manufactured alloys. Notably, the two alloys predicted to have the highest Pugh ratio values, W20Ta70Nb10 and W30Ta60Nb10, exhibit no intergranular microcracking in experiments.",
+    "authors": [
+      "Kareem Abdelmaqsoud",
+      "Daniel Sinclair",
+      "Venkata Satya Surya Amaranth Karra",
+      "S. Mohadeseh Taheri-Mousavi",
+      "Michael Widom",
+      "Bryan A. Webler",
+      "John R. Kitchin"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2601.11295v1"
+  },
+  {
+    "id": "paper_048",
+    "title": "Advanced Manufacturing with Renewable and Bio-based Materials: AI/ML workflows and Process Optimization",
+    "abstract": "Advanced manufacturing with new bio-derived materials can be achieved faster and more economically with first-principle-based artificial intelligence and machine learning (AI/ML)-derived models and process optimization. Not only is this motivated by increased industry profitability, but it can also be optimized to reduce waste generation, energy consumption, and gas emissions through additive manufacturing (AM) and AI/ML-directed self-driving laboratory (SDL) process optimization. From this perspective, the benefits of using 3D printing technology to manufacture durable, sustainable materials will enable high-value reuse and promote a better circular economy. Using AI/ML workflows at different levels, it is possible to optimize the synthesis and adaptation of new bio-derived materials with self-correcting 3D printing methods, and in-situ characterization. Working with training data and hypotheses derived from Large Language Models (LLMs) and algorithms, including ML-optimized simulation, it is possible to demonstrate more field convergence. The combination of SDL and AI/ML Workflows can be the norm for improved use of biobased and renewable materials towards advanced manufacturing. This should result in faster and better structure, composition, processing, and properties (SCPP) correlation. More agentic AI tasks, as well as supervised or unsupervised learning, can be incorporated to improve optimization protocols continuously. Deep Learning (DL), Reinforcement Learning (RL), and Deep Reinforcement Learning (DRL) with Deep Neural Networks (DNNs) can be applied to more generative AI directions in both AM and SDL, with bio-based materials.",
+    "authors": [
+      "Rigoberto Advincula",
+      "Jihua Chen"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2601.10382v1"
+  },
+  {
+    "id": "paper_049",
+    "title": "On the Feasibility of Extreme Heating Rates in SEM using MEMS Heater Platforms",
+    "abstract": "Understanding microstructural evolution under extreme thermal conditions is essential for advancing metal additive manufacturing (AM). This work demonstrates the feasibility of employing micro-electro-mechanical system (MEMS) heating platforms for in-situ scanning electron microscopy (SEM) characterization of bulk-like samples during rapid thermal cycling. Using electron backscatter diffraction (EBSD), we tracked the ferrite-to-austenite phase transformation in a pure iron specimen and confirmed that the sample surface temperature closely follows the MEMS temperature setpoint within device accuracy. Under vacuum conditions, stable heating and cooling rates of up to 1000 C/s were achieved with minimal power input and without compromising EBSD pattern quality. These findings establish MEMS-based heating as a robust approach for in-situ microstructural characterization of AM-relevant thermal processes in the SEM, enabling quantitative studies of thermally activated phenomena such as diffusion, phase transformations, and microstructural evolution under far-from-equilibrium conditions.",
+    "authors": [
+      "C. Koenig",
+      "P. Mayr",
+      "J. R. Jinschek",
+      "A. Bastos Fanta"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2601.05831v1"
+  },
+  {
+    "id": "paper_050",
+    "title": "Exploring Metal Additive Manufacturing in Martian Atmospheric Environments",
+    "abstract": "In-space manufacturing is essential for achieving long-term planetary colonization, particularly on Mars, where material transport from Earth is both costly and logistically restrictive. Traditional subtractive manufacturing methods are highly equipment-, energy-, and material-intensive, making additive manufacturing (AM) a more practical and sustainable alternative for extraterrestrial production. Among various AM technologies, selective laser melting (SLM) stands out due to its exceptional versatility, precision, and capability to produce dense metallic parts with complex geometries. However, conventional SLM processes rely heavily on inert argon environments to prevent oxidation and ensure high-quality part formation, conditions that are difficult to reproduce on Mars. This study investigates the feasibility of using carbon dioxide (CO2), which makes up over 95% of the Martian atmosphere, as a potential substitute for argon in SLM. Single-track and two-dimensional 316L stainless steel specimens were fabricated under argon, CO2, and ambient air environments with a wide range of laser parameters to evaluate the influence of atmospheric composition on surface morphology, microstructural cohesion, and oxidation behavior. The results reveal that no single parameter controls the overall part quality; rather, a balance of parameters is essential to maintain thermal equilibrium during fabrication. Although parts produced in CO2 exhibited slightly inferior surface finish, cohesion, and oxidation resistance compared to argon, they performed significantly better than those fabricated in ambient air. These findings suggest that CO2-assisted SLM could enable sustainable in situ manufacturing on Mars and may also serve as a cost-effective alternative shielding gas for terrestrial applications.",
+    "authors": [
+      "Zane Mebruer",
+      "Wan Shou"
+    ],
+    "year": 2026,
+    "source": "arXiv",
+    "doi": null,
+    "arxiv_id": "2601.04232v1"
+  }
+]

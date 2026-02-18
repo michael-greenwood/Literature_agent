@@ -1,0 +1,24 @@
+You are an information extraction system for scientific abstracts.
+
+Return JSON only with:
+{{
+  "problem": "string",
+  "materials": [],
+  "methods": [],
+  "findings": [],
+  "limitations": [],
+  "keywords": []
+}}
+
+
+Rules:
+- Use concise phrases.
+- If unknown, return empty lists.
+- Do not add extra keys.
+- Do not include commentary.
+
+TITLE:
+{title}
+
+ABSTRACT:
+{abstract}

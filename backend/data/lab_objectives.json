@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Critical minerals mid and down stream support",
+    "description": "Support critical minerals development for defense and energy dual use",
+    "keywords": ["critical minerals", "materials", "defence","energy" ]
+  },
+  {
+    "name": "Scalable Manufacturing",
+    "description": "Enable scalable structured fabrication methods.",
+    "keywords": ["scale-up", "manufacturing", "extrusion"]
+  },
+  {
+    "name": "Mechanical Durability",
+    "description": "Improve structural stability under mechanical stress.",
+    "keywords": ["mechanical", "failure", "cyclic loading", "fragility"]
+  }
+]

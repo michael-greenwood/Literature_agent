@@ -1,0 +1,26 @@
+[
+  {
+    "name": "CO2 Capture",
+    "description": "Structured materials for carbon capture and adsorption systems.",
+    "keywords": ["CO2", "adsorption", "zeolite", "MOF", "capture", "structured column"],
+    "techniques": ["3D printing", "extrusion", "binder", "adsorption testing"]
+  },
+  {
+    "name": "Battery Dendrite Growth modelling",
+    "description": "Exploration of the utilization of phase field models to simulate dendrite growth during battery charge and discharge cycles.",
+    "keywords": ["dendrite", "phasefield", "lithium", "electrochemical", "solid-state battery", "simulation"],
+    "techniques": ["simulation", "cyclic", "phasefield", "reaction-diffusion"]
+  },
+  {
+    "name": "Aluminum Repair",
+    "description": "Advanced repair techniques for aluminum infrastructure.",
+    "keywords": ["aluminum", "corrosion", "repair", "electrodeposition"],
+    "techniques": ["electrodeposition", "surface engineering"]
+  },
+  {
+    "name": "Digital Twin Modeling",
+    "description": "Computational and reduced-order models for experimental systems.",
+    "keywords": ["digital twin", "modeling", "simulation", "reduced-order"],
+    "techniques": ["numerical modeling", "surrogate modeling"]
+  }
+]
