@@ -1,5 +1,15 @@
 # Literature Intelligence Agent
 
+# Literature Review Demo
+
+This document describes the original demonstration system for
+AI-assisted literature review.
+
+It predates the embedding-based literature intelligence architecture
+now being developed in the `/docs/literature` directory.
+
+The demo architecture is preserved here for reference.
+
 ### (Spine Subsystem: Literature Scrape & Triage Engine)
 
 ------------------------------------------------------------------------
