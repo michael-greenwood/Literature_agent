@@ -1,7 +1,7 @@
 import time
 import json
 
-from engine import LiteratureEngine
+from literature_agent.router.engine import LiteratureEngine
 
 def pretty_print_state(state):
     print("\n==============================")
