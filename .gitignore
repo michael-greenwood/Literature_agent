@@ -1,5 +1,7 @@
+# --------------------
 # Logs
-logs
+# --------------------
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,15 +9,50 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# --------------------
+# Node / Frontend
+# --------------------
+node_modules/
+dist/
+dist-ssr/
 *.local
 
-# Editor directories and files
+# --------------------
+# Python
+# --------------------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.env
+
+# Python build artifacts
+build/
+develop-eggs/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+
+# Python testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --------------------
+# Databases
+# --------------------
+*.sqlite3
+*.db
+
+# --------------------
+# Editor / IDE
+# --------------------
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
@@ -24,17 +61,6 @@ dist-ssr
 *.sw?
 
 # --------------------
-# Python / Backend
+# Temporary
 # --------------------
-.venv/
-venv/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.env
-*.sqlite3
-*.db
-
-# Backend logs / temp
 out.txt
