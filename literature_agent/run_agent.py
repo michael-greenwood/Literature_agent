@@ -1,6 +1,6 @@
 from router.event_router import EventRouter
 from events.event import Event
-
+from events.event_types import EventTypes
 from queues.embedding_queue import embedding_queue
 from agents.embedding.embedding_agent import EmbeddingAgent
 
@@ -9,7 +9,7 @@ def main():
 
     router = EventRouter()
 
-    router.register_queue("paper_ingested", embedding_queue)
+    router.register_queue(EventTypes.Paper.INGESTED, embedding_queue)
 
     embedding_agent = EmbeddingAgent(
         name="EmbeddingAgent",
