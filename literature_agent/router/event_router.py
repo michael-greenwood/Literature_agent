@@ -1,6 +1,5 @@
 import queue
 
-
 class EventRouter:
 
     def __init__(self):

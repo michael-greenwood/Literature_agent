@@ -1,8 +1,10 @@
 class EventTypes:
+    class Literature_Source:
+        INGEST = "start_ingestion"
 
     class Paper:
         INGESTED = "paper_ingested"
-
+        
     class Embedding:
         CREATED = "embedding_created"
 
