@@ -20,14 +20,15 @@ class StorageAgent(BaseAgent):
 
         cur.execute("""
         INSERT OR REPLACE INTO papers
-        (id, title, abstract, embedding, embedding_model)
-        VALUES (?, ?, ?, ?, ?)
+        (id, title, abstract, embedding, embedding_model, embedding_dim)
+        VALUES (?, ?, ?, ?, ?, ?)
         """, (
             paper.get("id", paper["title"]),
             paper["title"],
             paper["abstract"],
             json.dumps(embedding),
-            EMBEDDING_MODEL
+            EMBEDDING_MODEL,
+            len(embedding)
         ))
 
         conn.commit()

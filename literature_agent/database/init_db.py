@@ -12,8 +12,9 @@ def init_db():
         title TEXT,
         abstract TEXT,
         embedding TEXT,
-        embedding_model TEXT
-    )
+        embedding_model TEXT,
+        embedding_dim INTEGER
+)
     """)
 
     conn.commit()
