@@ -1,16 +1,24 @@
-import queue
-
 class EventRouter:
 
     def __init__(self):
-        self.queues = {}
+        self.routes = {}
 
     def register_queue(self, event_type, q):
-        self.queues.setdefault(event_type, []).append(q)
+        self.routes.setdefault(event_type, []).append(q)
+
+    def resolve_destinations(self, event):
+        """
+        Placeholder for future routing logic.
+        """
+        return self.routes.get(event.type, [])
 
     def publish(self, event):
-        if event.type not in self.queues:
+
+        destinations = self.resolve_destinations(event)
+
+        if not destinations:
+            print(f"[Router] No route for event type: {event.type}")
             return
 
-        for q in self.queues[event.type]:
+        for q in destinations:
             q.put(event)

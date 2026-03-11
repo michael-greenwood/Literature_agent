@@ -2,7 +2,7 @@ import threading
 import time
 from datetime import datetime
 
-from literature_agent.agents.ingestion.data_loader import load_abstracts, load_projects
+from old_code.data_loader import load_abstracts, load_projects
 from literature_agent.models.models import initialize_memory, update_engine_timestamp
 import json
 from llm_client import query_llm

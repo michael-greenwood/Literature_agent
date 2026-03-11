@@ -2,7 +2,7 @@ import json
 from agents.base_agent import BaseAgent
 from events.event import Event
 from events.event_types import EventTypes
-import time
+
 
 class IngestionAgent(BaseAgent):
 
@@ -10,7 +10,10 @@ class IngestionAgent(BaseAgent):
         super().__init__(name, queue, router)
         self.data_file = data_file
 
-    def run(self):
+    def handle_event(self, event):
+
+        if event.type != EventTypes.Literature_Source.INGEST:
+            return
 
         try:
             print("[IngestionAgent] Loading papers from file")
@@ -20,13 +23,14 @@ class IngestionAgent(BaseAgent):
 
             for paper in papers:
 
-                event = Event(
+                new_event = Event(
                     type=EventTypes.Paper.INGESTED,
                     payload=paper,
-                    source=self.name
+                    source=self.name,
+                    parent_id=event.id
                 )
 
-                self.router.publish(event)
+                self.router.publish(new_event)
 
             print(f"[IngestionAgent] Published {len(papers)} papers")
 

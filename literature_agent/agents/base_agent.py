@@ -1,3 +1,4 @@
+import queue
 import threading
 
 
@@ -11,14 +12,16 @@ class BaseAgent(threading.Thread):
         self.running = True
 
     def handle_event(self, event):
-        """
-        Override in subclasses
-        """
         raise NotImplementedError
 
     def run(self):
+
         while self.running:
-            event = self.queue.get()
+
+            try:
+                event = self.queue.get(timeout=1)
+            except queue.Empty:
+                continue
 
             try:
                 self.handle_event(event)

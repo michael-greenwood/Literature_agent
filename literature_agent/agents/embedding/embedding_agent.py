@@ -34,7 +34,8 @@ class EmbeddingAgent(BaseAgent):
                 "paper": paper,
                 "embedding": embedding
             },
-            source=self.name
+            source=self.name,
+            parent_id=event.id
         )
         print("Embedding size:", len(embedding))
 
