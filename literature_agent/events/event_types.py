@@ -14,3 +14,8 @@ class EventTypes:
     class Reasoning:
         REQUESTED = "reasoning_requested"
         COMPLETED = "reasoning_completed"
+    class Project:
+        INGEST = "project.ingest"
+        CREATED = "project.created"
+        UPDATED = "project.updated"
+        EMBEDDED = "project.embedded"

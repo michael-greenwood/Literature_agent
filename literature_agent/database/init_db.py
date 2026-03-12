@@ -17,5 +17,16 @@ def init_db():
 )
     """)
 
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS projects (
+        id TEXT PRIMARY KEY,
+        name TEXT,
+        description TEXT,
+        embedding TEXT,
+        embedding_model TEXT,
+        embedding_dim INTEGER
+    )
+    """)
+    
     conn.commit()
     conn.close()

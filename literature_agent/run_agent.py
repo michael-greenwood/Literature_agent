@@ -13,7 +13,13 @@ from agents.ingestion.ingestion_agent import IngestionAgent
 from queues.debug_queue import debug_queue
 from agents.debug.debug_agent import DebugAgent
 from database.init_db import init_db
+from queues.project_ingestion_queue import project_ingestion_queue
+from queues.project_embedding_queue import project_embedding_queue
+from queues.project_storage_queue import project_storage_queue
 
+from agents.ingestion.project_ingestion_agent import ProjectIngestionAgent
+from agents.embedding.project_embedding_agent import ProjectEmbeddingAgent
+from agents.embedding.project_storage_agent import ProjectStorageAgent
 import time
 
 
@@ -30,6 +36,9 @@ def main():
     router.register_queue(EventTypes.Literature_Source.INGEST, debug_queue)
     router.register_queue(EventTypes.Paper.INGESTED, debug_queue)
     router.register_queue(EventTypes.Embedding.CREATED, debug_queue)
+    router.register_queue(EventTypes.Project.INGEST, project_ingestion_queue)
+    router.register_queue(EventTypes.Project.CREATED, project_embedding_queue)
+    router.register_queue(EventTypes.Project.EMBEDDED, project_storage_queue)
     # Create agents
     embedding_agent = EmbeddingAgent(
         name="EmbeddingAgent",
@@ -49,24 +58,43 @@ def main():
         router=router,
         data_file="literature_agent/data/abstracts.json"
     )
+    project_ingestion_agent = ProjectIngestionAgent(
+        name="ProjectIngestionAgent",
+        queue=project_ingestion_queue,
+        router=router,
+        data_file="literature_agent/data/projects.json"
+    )
+
+    project_embedding_agent = ProjectEmbeddingAgent(
+        name="ProjectEmbeddingAgent",
+        queue=project_embedding_queue,
+        router=router
+    )
+
+    project_storage_agent = ProjectStorageAgent(
+        name="ProjectStorageAgent",
+        queue=project_storage_queue,
+        router=router
+    )
     debug_agent = DebugAgent(
         name="DebugAgent",
         queue=debug_queue,
         router=router
     )
     # Start agents
-    debug_agent.start()
-    embedding_agent.start()
-    storage_agent.start()
-    time.sleep(0.1)  # Ensure debug agent is ready to receive logs
-    ingestion_agent.start()
-
     agents = [
+        debug_agent,
         embedding_agent,
         storage_agent,
         ingestion_agent,
-        debug_agent
+        project_ingestion_agent,
+        project_embedding_agent,
+        project_storage_agent
     ]
+    for agent in agents:
+        agent.start()
+    time.sleep(0.1)  # Give threads time to start
+    
 
     # Give threads time to spin up
     time.sleep(0.1)
@@ -79,7 +107,13 @@ def main():
             source="Main"
         )
     )
-
+    router.publish(
+        Event(
+            type=EventTypes.Project.INGEST,
+            payload={},
+            source="Main"
+        )
+    )
     # Keep service alive
     try:
         while True:
