@@ -28,5 +28,24 @@ def init_db():
     )
     """)
     
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS paper_project_similarity (
+        paper_id TEXT,
+        project_id TEXT,
+        similarity_score REAL,
+        PRIMARY KEY (paper_id, project_id)
+    )
+    """)
+
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS paper_project_screening (
+        paper_id TEXT,
+        project_id TEXT,
+        similarity_score REAL,
+        decision TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (paper_id, project_id)
+    )
+    """)
     conn.commit()
     conn.close()

@@ -14,3 +14,7 @@ INGESTION_INTERVAL_SECONDS = 3600
 
 # Future database location
 DATABASE_PATH = "literature_agent/database/literature.db"
+
+#screening thresholds
+HIGH_SIMILARITY_THRESHOLD = 0.7
+LOW_SIMILARITY_THRESHOLD = 0.4

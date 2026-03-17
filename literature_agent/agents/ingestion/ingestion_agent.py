@@ -1,4 +1,6 @@
 import json
+import hashlib
+
 from agents.base_agent import BaseAgent
 from events.event import Event
 from events.event_types import EventTypes
@@ -22,6 +24,11 @@ class IngestionAgent(BaseAgent):
                 papers = json.load(f)
 
             for paper in papers:
+
+                # Generate deterministic paper ID
+                text = paper["title"] + paper["abstract"]
+                paper_id = hashlib.sha1(text.encode()).hexdigest()
+                paper["id"] = paper_id
 
                 new_event = Event(
                     type=EventTypes.Paper.INGESTED,
