@@ -1,8 +1,11 @@
 from fastapi import FastAPI
-from old_code.engine import LiteratureEngine
 from fastapi.middleware.cors import CORSMiddleware
 
+from lit_agent_engine import LitAgentEngine
+from database.db import get_connection
+
 app = FastAPI()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
@@ -11,9 +14,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Create one global engine instance
-engine = LiteratureEngine()
-
+# Global engine instance
+engine = LitAgentEngine()
 
 # -------------------------
 # Engine Control
@@ -25,46 +27,112 @@ def start_engine():
     return {"status": "started"}
 
 
-@app.post("/engine/reset")
-def reset_engine():
-    engine.reset()
-    return {"status": "reset"}
+@app.post("/engine/stop")
+def stop_engine():
+    engine.stop()
+    return {"status": "stopped"}
 
-
-# -------------------------
-# Engine State
-# -------------------------
 
 @app.get("/engine/state")
-def get_state():
+def get_engine_state():
     return engine.get_state()
 
 
 # -------------------------
-# Project View
+# Project Data
 # -------------------------
 
-@app.get("/projects/{project_name}")
-def get_project(project_name: str):
-    state = engine.get_state()
-    project = state["projects"].get(project_name)
+@app.get("/projects/{project_id}/screened")
+def get_project_screened(project_id: str):
 
-    if not project:
-        return {"error": "Project not found"}
+    conn = get_connection()
+    cur = conn.cursor()
 
-    return project
+    cur.execute("""
+    SELECT
+        p.id,
+        p.title,
+        s.similarity_score,
+        s.decision
+    FROM paper_project_screening s
+    JOIN papers p ON s.paper_id = p.id
+    WHERE s.project_id = ?
+    ORDER BY s.similarity_score DESC
+    """, (project_id,))
+
+    rows = cur.fetchall()
+    conn.close()
+
+    return [
+        {
+            "paper_id": r[0],
+            "title": r[1],
+            "score": r[2],
+            "decision": r[3]
+        }
+        for r in rows
+    ]
 
 
 # -------------------------
-# Paper Detail View
+# Accepted Papers
+# -------------------------
+
+@app.get("/projects/{project_id}/accepted")
+def get_project_accepted(project_id: str):
+
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+    SELECT
+        p.id,
+        p.title,
+        s.similarity_score
+    FROM paper_project_screening s
+    JOIN papers p ON s.paper_id = p.id
+    WHERE s.project_id = ?
+    AND s.decision = 'pass_high'
+    ORDER BY s.similarity_score DESC
+    """, (project_id,))
+
+    rows = cur.fetchall()
+    conn.close()
+
+    return [
+        {
+            "paper_id": r[0],
+            "title": r[1],
+            "score": r[2]
+        }
+        for r in rows
+    ]
+
+
+# -------------------------
+# Paper Detail
 # -------------------------
 
 @app.get("/papers/{paper_id}")
 def get_paper(paper_id: str):
-    state = engine.get_state()
-    paper = state["papers"].get(paper_id)
 
-    if not paper:
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+    SELECT id, title, abstract
+    FROM papers
+    WHERE id = ?
+    """, (paper_id,))
+
+    row = cur.fetchone()
+    conn.close()
+
+    if not row:
         return {"error": "Paper not found"}
 
-    return paper
+    return {
+        "id": row[0],
+        "title": row[1],
+        "abstract": row[2]
+    }
