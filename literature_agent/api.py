@@ -42,6 +42,29 @@ def get_engine_state():
 # Project Data
 # -------------------------
 
+@app.get("/projects")
+def get_projects():
+
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+    SELECT id, name, description
+    FROM projects
+    """)
+
+    rows = cur.fetchall()
+    conn.close()
+
+    return [
+        {
+            "id": r[0],
+            "name": r[1],
+            "description": r[2]
+        }
+        for r in rows
+    ]
+
 @app.get("/projects/{project_id}/screened")
 def get_project_screened(project_id: str):
 
