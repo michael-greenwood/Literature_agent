@@ -1,4 +1,4 @@
-from agents.base_agent import BaseAgent
+from literature_agent.agents.base_agent import BaseAgent
 import logging
 
 logger = logging.getLogger("EventTrace")

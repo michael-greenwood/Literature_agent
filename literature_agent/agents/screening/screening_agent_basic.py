@@ -1,10 +1,10 @@
 import logging
 
-from agents.base_agent import BaseAgent
-from events.event import Event
-from events.event_types import EventTypes
-from database.db import get_connection
-from config.settings import (
+from literature_agent.agents.base_agent import BaseAgent
+from literature_agent.events.event import Event
+from literature_agent.events.event_types import EventTypes
+from literature_agent.database.db import get_connection
+from literature_agent.config.settings import (
     HIGH_SIMILARITY_THRESHOLD,
     LOW_SIMILARITY_THRESHOLD
 )

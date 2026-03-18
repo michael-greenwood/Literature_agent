@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from lit_agent_engine import LitAgentEngine
-from database.db import get_connection
+from literature_agent.engine import LitAgentEngine
+from literature_agent.database.db import get_connection
 
 app = FastAPI()
 

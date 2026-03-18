@@ -2,10 +2,10 @@ import json
 import logging
 import numpy as np
 
-from agents.base_agent import BaseAgent
-from events.event import Event
-from events.event_types import EventTypes
-from database.db import get_connection
+from literature_agent.agents.base_agent import BaseAgent
+from literature_agent.events.event import Event
+from literature_agent.events.event_types import EventTypes
+from literature_agent.database.db import get_connection
 
 logger = logging.getLogger("SimilarityAgent")
 

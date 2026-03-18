@@ -1,5 +1,5 @@
 import sqlite3
-from config.settings import DATABASE_PATH
+from literature_agent.config.settings import DATABASE_PATH
 
 
 def get_connection():

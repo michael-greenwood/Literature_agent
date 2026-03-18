@@ -1,4 +1,4 @@
-from lit_agent_engine import LitAgentEngine
+from literature_agent.engine import LitAgentEngine
 import time
 
 engine = LitAgentEngine()

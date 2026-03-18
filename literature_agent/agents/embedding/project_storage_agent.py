@@ -1,10 +1,10 @@
 import json
 import logging
 
-from agents.base_agent import BaseAgent
-from events.event_types import EventTypes
-from database.db import get_connection
-from config.settings import EMBEDDING_MODEL
+from literature_agent.agents.base_agent import BaseAgent
+from literature_agent.events.event_types import EventTypes
+from literature_agent.database.db import get_connection
+from literature_agent.config.settings import EMBEDDING_MODEL
 
 logger = logging.getLogger("ProjectStorageAgent")
 

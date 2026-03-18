@@ -1,4 +1,4 @@
-from database.db import get_connection
+from literature_agent.database.db import get_connection
 
 
 def init_db():

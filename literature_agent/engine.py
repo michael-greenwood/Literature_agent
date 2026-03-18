@@ -1,37 +1,39 @@
 import time
-from config.logging_config import *
-from config.settings import DATA_DIR
 import os
-from router.event_router import EventRouter
-from events.event import Event
-from events.event_types import EventTypes
 
-from database.init_db import init_db
+from literature_agent.config.logging_config import *
+from literature_agent.config.settings import DATA_DIR
+
+from literature_agent.router.event_router import EventRouter
+
+from literature_agent.events.event import Event
+from literature_agent.events.event_types import EventTypes
+
+from literature_agent.database.init_db import init_db
 
 # Agents
-from agents.embedding.embedding_agent import EmbeddingAgent
-from agents.embedding.storage_agent import StorageAgent
-from agents.ingestion.ingestion_agent import IngestionAgent
-from agents.debug.debug_agent import DebugAgent
-from agents.ingestion.project_ingestion_agent import ProjectIngestionAgent
-from agents.embedding.project_embedding_agent import ProjectEmbeddingAgent
-from agents.embedding.project_storage_agent import ProjectStorageAgent
-from agents.similarity.similarity_agent import SimilarityAgent
-from agents.screening.screening_agent_basic import ScreeningAgentBasic
-from agents.reasoning.reasoning_agent import ReasoningAgent
+from literature_agent.agents.embedding.embedding_agent import EmbeddingAgent
+from literature_agent.agents.embedding.storage_agent import StorageAgent
+from literature_agent.agents.ingestion.ingestion_agent import IngestionAgent
+from literature_agent.agents.debug.debug_agent import DebugAgent
+from literature_agent.agents.ingestion.project_ingestion_agent import ProjectIngestionAgent
+from literature_agent.agents.embedding.project_embedding_agent import ProjectEmbeddingAgent
+from literature_agent.agents.embedding.project_storage_agent import ProjectStorageAgent
+from literature_agent.agents.similarity.similarity_agent import SimilarityAgent
+from literature_agent.agents.screening.screening_agent_basic import ScreeningAgentBasic
+from literature_agent.agents.reasoning.reasoning_agent import ReasoningAgent
 
 # Queues
-from queues.embedding_queue import embedding_queue
-from queues.ingestion_queue import ingestion_queue
-from queues.storage_queue import storage_queue
-from queues.debug_queue import debug_queue
-from queues.project_ingestion_queue import project_ingestion_queue
-from queues.project_embedding_queue import project_embedding_queue
-from queues.project_storage_queue import project_storage_queue
-from queues.similarity_queue import similarity_queue
-from queues.screening_queue_basic import screening_queue_basic
-from queues.reasoning_queue import reasoning_queue
-
+from literature_agent.queues.embedding_queue import embedding_queue
+from literature_agent.queues.ingestion_queue import ingestion_queue
+from literature_agent.queues.storage_queue import storage_queue
+from literature_agent.queues.debug_queue import debug_queue
+from literature_agent.queues.project_ingestion_queue import project_ingestion_queue
+from literature_agent.queues.project_embedding_queue import project_embedding_queue
+from literature_agent.queues.project_storage_queue import project_storage_queue
+from literature_agent.queues.similarity_queue import similarity_queue
+from literature_agent.queues.screening_queue_basic import screening_queue_basic
+from literature_agent.queues.reasoning_queue import reasoning_queue
 
 class LitAgentEngine:
 

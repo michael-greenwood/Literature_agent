@@ -1,8 +1,8 @@
 import logging
-from agents.base_agent import BaseAgent
-from events.event import Event
-from events.event_types import EventTypes
-from config.settings import EMBEDDING_MODEL
+from literature_agent.agents.base_agent import BaseAgent
+from literature_agent.events.event import Event
+from literature_agent.events.event_types import EventTypes
+from literature_agent.config.settings import EMBEDDING_MODEL
 from sentence_transformers import SentenceTransformer
 
 logger = logging.getLogger("ProjectEmbeddingAgent")

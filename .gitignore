@@ -23,6 +23,7 @@ dist-ssr/
 .venv/
 venv/
 __pycache__/
+*.pyc
 *.py[cod]
 *.pyd
 *.so

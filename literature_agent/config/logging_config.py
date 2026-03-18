@@ -1,15 +1,16 @@
 import logging
 import os
 
-LOG_DIR = "logs"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LOG_DIR = os.path.join(BASE_DIR, "logs")
+
 os.makedirs(LOG_DIR, exist_ok=True)
 
-# Base logging setup
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
     handlers=[
-        logging.FileHandler(f"{LOG_DIR}/literature_agent.log"),
+        logging.FileHandler(os.path.join(LOG_DIR, "literature_agent.log")),
         logging.StreamHandler()
     ]
 )
