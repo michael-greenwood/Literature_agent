@@ -1,5 +1,6 @@
 import json
 import logging
+import uuid
 
 from literature_agent.agents.base_agent import BaseAgent
 from literature_agent.events.event_types import EventTypes
@@ -23,13 +24,13 @@ class ProjectStorageAgent(BaseAgent):
 
         conn = get_connection()
         cur = conn.cursor()
-
+        project_id = project.get("id") or str(uuid.uuid4())
         cur.execute("""
         INSERT OR REPLACE INTO projects
         (id, name, description, embedding, embedding_model, embedding_dim)
         VALUES (?, ?, ?, ?, ?, ?)
         """, (
-            project["name"],
+            project_id,
             project["name"],
             project["description"],
             json.dumps(embedding),

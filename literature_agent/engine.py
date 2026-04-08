@@ -1,7 +1,7 @@
 import time
 import os
-
-from literature_agent.config.logging_config import *
+import logging
+from literature_agent.config.logging_config import setup_logging
 from literature_agent.config.settings import DATA_DIR
 
 from literature_agent.router.event_router import EventRouter
@@ -35,6 +35,16 @@ from literature_agent.queues.similarity_queue import similarity_queue
 from literature_agent.queues.screening_queue_basic import screening_queue_basic
 from literature_agent.queues.reasoning_queue import reasoning_queue
 
+from typing import Optional
+
+_engine_instance: Optional["LitAgentEngine"] = None
+
+def get_engine():
+    global _engine_instance
+    if _engine_instance is None:
+        _engine_instance = LitAgentEngine()
+    return _engine_instance
+
 class LitAgentEngine:
 
     def __init__(self):
@@ -43,81 +53,98 @@ class LitAgentEngine:
         self.running = False
 
     def start(self):
-
         if self.running:
             print("[Engine] Already running")
             return
 
-        print("[Engine] Starting...")
+        logging.info("[Engine] Starting...")
+        try:
+            if not logging.getLogger().handlers:
+                setup_logging()
+            init_db()
 
-        init_db()
+            self.router = EventRouter()
 
-        self.router = EventRouter()
+            # --- Routing ---
+            self.router.register_queue(EventTypes.Literature_Source.INGEST, ingestion_queue)
+            self.router.register_queue(EventTypes.Paper.INGESTED, embedding_queue)
+            self.router.register_queue(EventTypes.Embedding.CREATED, storage_queue)
 
-        # --- Routing ---
-        self.router.register_queue(EventTypes.Literature_Source.INGEST, ingestion_queue)
-        self.router.register_queue(EventTypes.Paper.INGESTED, embedding_queue)
-        self.router.register_queue(EventTypes.Embedding.CREATED, storage_queue)
+            # Debug
+            self.router.register_queue(EventTypes.Literature_Source.INGEST, debug_queue)
+            self.router.register_queue(EventTypes.Paper.INGESTED, debug_queue)
+            self.router.register_queue(EventTypes.Embedding.CREATED, debug_queue)
+            self.router.register_queue(EventTypes.Project.INGEST, debug_queue)
+            self.router.register_queue(EventTypes.Project.CREATED, debug_queue)
+            self.router.register_queue(EventTypes.Project.EMBEDDED, debug_queue)
+            self.router.register_queue(EventTypes.Paper.STORED, debug_queue)
+            self.router.register_queue(EventTypes.Similarity.SCORED, debug_queue)
+            self.router.register_queue(EventTypes.Reasoning.REQUESTED, debug_queue)
+            self.router.register_queue(EventTypes.Reasoning.COMPLETED, debug_queue)
 
-        # Debug
-        self.router.register_queue(EventTypes.Literature_Source.INGEST, debug_queue)
-        self.router.register_queue(EventTypes.Paper.INGESTED, debug_queue)
-        self.router.register_queue(EventTypes.Embedding.CREATED, debug_queue)
-        self.router.register_queue(EventTypes.Project.INGEST, debug_queue)
-        self.router.register_queue(EventTypes.Project.CREATED, debug_queue)
-        self.router.register_queue(EventTypes.Project.EMBEDDED, debug_queue)
-        self.router.register_queue(EventTypes.Paper.STORED, debug_queue)
-        self.router.register_queue(EventTypes.Similarity.SCORED, debug_queue)
-        self.router.register_queue(EventTypes.Reasoning.REQUESTED, debug_queue)
-        self.router.register_queue(EventTypes.Reasoning.COMPLETED, debug_queue)
+            # Project pipeline
+            self.router.register_queue(EventTypes.Project.INGEST, project_ingestion_queue)
+            self.router.register_queue(EventTypes.Project.CREATED, project_embedding_queue)
+            self.router.register_queue(EventTypes.Project.EMBEDDED, project_storage_queue)
 
-        # Project pipeline
-        self.router.register_queue(EventTypes.Project.INGEST, project_ingestion_queue)
-        self.router.register_queue(EventTypes.Project.CREATED, project_embedding_queue)
-        self.router.register_queue(EventTypes.Project.EMBEDDED, project_storage_queue)
+            # Main pipeline
+            self.router.register_queue(EventTypes.Paper.STORED, similarity_queue)
+            self.router.register_queue(EventTypes.Similarity.SCORED, screening_queue_basic)
+            self.router.register_queue(EventTypes.Reasoning.REQUESTED, reasoning_queue)
 
-        # Main pipeline
-        self.router.register_queue(EventTypes.Paper.STORED, similarity_queue)
-        self.router.register_queue(EventTypes.Similarity.SCORED, screening_queue_basic)
-        self.router.register_queue(EventTypes.Reasoning.REQUESTED, reasoning_queue)
+            # --- Agents ---
+            self.agents = [
+                DebugAgent("DebugAgent", debug_queue, self.router),
+                EmbeddingAgent("EmbeddingAgent", embedding_queue, self.router),
+                StorageAgent("StorageAgent", storage_queue, self.router),
+                IngestionAgent("IngestionAgent", ingestion_queue, self.router,
+                            data_file=os.path.join(DATA_DIR, "abstracts.json")),
+                ProjectIngestionAgent("ProjectIngestionAgent", project_ingestion_queue, self.router,
+                                    data_file=os.path.join(DATA_DIR, "projects.json")),
+                ProjectEmbeddingAgent("ProjectEmbeddingAgent", project_embedding_queue, self.router),
+                ProjectStorageAgent("ProjectStorageAgent", project_storage_queue, self.router),
+                SimilarityAgent("SimilarityAgent", similarity_queue, self.router),
+                ScreeningAgentBasic("ScreeningAgentBasic", screening_queue_basic, self.router),
+                ReasoningAgent("ReasoningAgent", reasoning_queue, self.router)
+            ]
 
-        # --- Agents ---
-        self.agents = [
-            DebugAgent("DebugAgent", debug_queue, self.router),
-            EmbeddingAgent("EmbeddingAgent", embedding_queue, self.router),
-            StorageAgent("StorageAgent", storage_queue, self.router),
-            IngestionAgent("IngestionAgent", ingestion_queue, self.router,
-                           data_file=os.path.join(DATA_DIR, "abstracts.json")),
-            ProjectIngestionAgent("ProjectIngestionAgent", project_ingestion_queue, self.router,
-                                  data_file=os.path.join(DATA_DIR, "projects.json")),
-            ProjectEmbeddingAgent("ProjectEmbeddingAgent", project_embedding_queue, self.router),
-            ProjectStorageAgent("ProjectStorageAgent", project_storage_queue, self.router),
-            SimilarityAgent("SimilarityAgent", similarity_queue, self.router),
-            ScreeningAgentBasic("ScreeningAgentBasic", screening_queue_basic, self.router),
-            ReasoningAgent("ReasoningAgent", reasoning_queue, self.router)
-        ]
+            # Start agents
+            for agent in self.agents:
+                agent.start()
 
-        # Start agents
-        for agent in self.agents:
-            agent.start()
+            time.sleep(0.1)
 
-        time.sleep(0.1)
+            # Kick off ingestion
+            self.router.publish(Event(
+                type=EventTypes.Literature_Source.INGEST,
+                payload={},
+                source="Engine"
+            ))
 
-        # Kick off ingestion
-        self.router.publish(Event(
-            type=EventTypes.Literature_Source.INGEST,
-            payload={},
-            source="Engine"
-        ))
+            self.router.publish(Event(
+                type=EventTypes.Project.INGEST,
+                payload={},
+                source="Engine"
+            ))
 
-        self.router.publish(Event(
-            type=EventTypes.Project.INGEST,
-            payload={},
-            source="Engine"
-        ))
+            self.running = True
+            print("[Engine] Started")
+        except Exception as e:
+            print("[Engine] Failed to start:", e)
 
-        self.running = True
-        print("[Engine] Started")
+            # cleanup partial state
+            for agent in self.agents:
+                try:
+                    agent.stop()
+                    agent.join(timeout=2)
+                except:
+                    pass
+
+            self.agents = []
+            self.router = None
+            self.running = False
+
+            raise
 
     def stop(self):
 
@@ -128,11 +155,16 @@ class LitAgentEngine:
         print("[Engine] Stopping...")
 
         for agent in self.agents:
-            agent.stop()
+            try:
+                agent.stop()
+            except:
+                pass
 
         for agent in self.agents:
             agent.join(timeout=5)
 
+        self.agents = []
+        self.router = None
         self.running = False
         print("[Engine] Stopped")
 

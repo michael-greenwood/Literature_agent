@@ -1,31 +1,39 @@
 import logging
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LOG_DIR = os.path.join(BASE_DIR, "logs")
 
-os.makedirs(LOG_DIR, exist_ok=True)
+def setup_logging():
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
-    handlers=[
-        logging.FileHandler(os.path.join(LOG_DIR, "literature_agent.log")),
-        logging.StreamHandler()
-    ]
-)
+    if logging.getLogger().handlers:
+        return  # 🔥 prevents duplicate handlers on reload
 
-# Event trace logger
-event_logger = logging.getLogger("EventTrace")
-event_logger.setLevel(logging.INFO)
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    LOG_DIR = os.path.join(BASE_DIR, "logs")
 
-event_handler = logging.FileHandler(f"{LOG_DIR}/event_trace.log")
+    os.makedirs(LOG_DIR, exist_ok=True)
 
-event_formatter = logging.Formatter(
-    "%(asctime)s | %(message)s"
-)
+    # Root logger
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+        handlers=[
+            logging.FileHandler(os.path.join(LOG_DIR, "literature_agent.log")),
+            logging.StreamHandler()
+        ]
+    )
 
-event_handler.setFormatter(event_formatter)
+    # Event trace logger
+    event_logger = logging.getLogger("EventTrace")
+    event_logger.setLevel(logging.INFO)
 
-event_logger.addHandler(event_handler)
-event_logger.propagate = False
+    if not event_logger.handlers:  # 🔥 prevent duplicates
+        event_handler = logging.FileHandler(os.path.join(LOG_DIR, "event_trace.log"))
+
+        event_formatter = logging.Formatter(
+            "%(asctime)s | %(message)s"
+        )
+
+        event_handler.setFormatter(event_formatter)
+        event_logger.addHandler(event_handler)
+
+    event_logger.propagate = False
